@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Farm : MonoBehaviour {
 
-    public Image icon;
+    //public Image icon;
+    public int ID;
     public int level;
     public int countFields;
 

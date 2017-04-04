@@ -6,9 +6,9 @@ public class FarmArchiv : MonoBehaviour {
 
     public static FarmArchiv instance;
 
-    public FarmBluePrint[] allFarms;
+    public FarmBluePrint[] farms;
 
-    public Dictionary<int, FarmBluePrint> allBulltes = new Dictionary<int, FarmBluePrint>();
+    public Dictionary<int, FarmBluePrint> allFarmes = new Dictionary<int, FarmBluePrint>();
 
 
     void Awake()
@@ -20,17 +20,17 @@ public class FarmArchiv : MonoBehaviour {
         }
         instance = this;
 
-        for (int i = 0; i < allFarms.Length; i++)
+        for (int i = 0; i < farms.Length; i++)
         {
-            allBulltes.Add(i, allFarms[i]);
+            allFarmes.Add(i, farms[i]);
         }
     }
 
     public int GetPositionOfIcon(Sprite vergleichsSprite)
     {
-        for (int i = 0; i < allBulltes.Count; i++)
+        for (int i = 0; i < allFarmes.Count; i++)
         {
-            if (allBulltes[i].Icon == vergleichsSprite)
+            if (allFarmes[i].Icon == vergleichsSprite)
                 return i;
         }
         return -1;

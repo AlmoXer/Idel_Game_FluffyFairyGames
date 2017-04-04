@@ -76,10 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Farm.cs" />
+    <Compile Include="Assets\FarmUI.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Scrpits\FarmArchiv.cs" />
     <Compile Include="Assets\Scrpits\FarmBluePrint.cs" />
-    <Compile Include="Assets\Scrpits\FarmUI.cs" />
-    <Compile Include="Assets\Scrpits\UIFarmCreater.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
