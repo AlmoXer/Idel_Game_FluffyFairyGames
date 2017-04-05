@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FarmUI : MonoBehaviour {
+public class FarmIteamUI : MonoBehaviour {
 
-    public Farm farm;
     public Image icon;
-    public Text level;
-    //public Image canUpgradeIcon;
+    public Text cost;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +15,11 @@ public class FarmUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (farm.ID == -1)
-            return;
-
-        icon.sprite = FarmArchiv.instance.allFarmes[farm.ID].Icon;
+		
 	}
+
+    public void Aktuallisieren(Sprite _icon)
+    {
+        icon.sprite = _icon;
+    }
 }

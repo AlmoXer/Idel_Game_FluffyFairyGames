@@ -18,6 +18,9 @@ public class Farm : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (ID == -1)
+            return;
+
 	}
 }

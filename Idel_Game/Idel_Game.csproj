@@ -77,6 +77,9 @@
   <ItemGroup>
     <Compile Include="Assets\DetailsFarmUI.cs" />
     <Compile Include="Assets\Farm.cs" />
+    <Compile Include="Assets\FarmBuilder.cs" />
+    <Compile Include="Assets\FarmBuilderIteamCreater.cs" />
+    <Compile Include="Assets\FarmIteamUI.cs" />
     <Compile Include="Assets\FarmUI.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\ScreenFader.cs" />
