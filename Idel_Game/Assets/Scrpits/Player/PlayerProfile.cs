@@ -82,6 +82,7 @@ public class PlayerProfile : MonoBehaviour
 
     public void saveFile()
     {
+        player.offlineTime = System.DateTime.Now.ToBinary();
         playerContainer.Save(Path.Combine(Application.dataPath, "Saves/players.xml"));
     }
 

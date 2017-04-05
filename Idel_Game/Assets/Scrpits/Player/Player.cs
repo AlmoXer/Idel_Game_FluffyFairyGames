@@ -15,7 +15,7 @@ public class Player
 
     public string rank = "Landwirt";
     public int money = 0;
-    public int offlineTime;
+    public long offlineTime;
     public int incomeOffline;
     public int incomeOnline;
 
