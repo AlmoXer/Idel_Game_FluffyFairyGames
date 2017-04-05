@@ -7,6 +7,9 @@ public class TimeMaster : MonoBehaviour {
 
     DateTime currentDate;
     DateTime oldDate;
+
+    private int deltaTime;
+
     void Start()
     {
         //Store the current time when it starts
@@ -21,8 +24,13 @@ public class TimeMaster : MonoBehaviour {
         //Use the Subtract method and store the result as a timespan variable
         TimeSpan difference = currentDate.Subtract(oldDate);
 
-        int deltaTime = difference.Days * 86400 + difference.Hours * 3600 + difference.Minutes * 60 + difference.Seconds;
+        deltaTime = difference.Days * 86400 + difference.Hours * 3600 + difference.Minutes * 60 + difference.Seconds;
     
 
+    }
+
+    public int GetDeltaTime()
+    {
+        return deltaTime;
     }
 }

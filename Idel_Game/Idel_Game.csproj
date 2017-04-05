@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scrpits\Player\PlayerContainer.cs" />
     <Compile Include="Assets\Scrpits\Player\PlayerProfile.cs" />
     <Compile Include="Assets\Scrpits\TimeMaster.cs" />
+    <Compile Include="Assets\StartIncomeUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Saves\players.xml" />
