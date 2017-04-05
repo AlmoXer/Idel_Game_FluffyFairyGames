@@ -17,6 +17,7 @@ public class FarmUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         if (farm.ID == -1)
             return;
 

@@ -25,7 +25,7 @@ public class PlayerProfile : MonoBehaviour
         }
 
         playerContainer = new PlayerContainer();
-    //    playerContainer = playerContainer.Load(Path.Combine(Application.dataPath, "Saves/players.xml"));
+        playerContainer = playerContainer.Load(Path.Combine(Application.dataPath, "Saves/players.xml"));
 
         if (playerContainer.Players.Count != 0)
             player = playerContainer.Players[0];
