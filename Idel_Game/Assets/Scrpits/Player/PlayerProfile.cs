@@ -61,7 +61,15 @@ public class PlayerProfile : MonoBehaviour
                 FarmBuilder.instance.farms[i].level = player.farmLevels[i];
             }
             firstTick = false;
+            return;
         }
+
+        int sum = 0;
+        for (int i = 0; i < farmIncomes.Length; i++)
+            sum += farmIncomes[i];
+
+        player.incomeOnline = sum;
+        player.incomeOffline = sum / 3;
     }
 
     public void createPlayer(string name)
@@ -74,13 +82,6 @@ public class PlayerProfile : MonoBehaviour
 
     public void saveFile()
     {
-        int sum=0;
-        for (int i = 0; i < farmIncomes.Length; i++)
-            sum = +farmIncomes[i];
-
-        player.incomeOnline = sum;
-        player.incomeOffline = sum / 3;
-
         playerContainer.Save(Path.Combine(Application.dataPath, "Saves/players.xml"));
     }
 

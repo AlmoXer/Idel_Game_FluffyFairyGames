@@ -11,27 +11,28 @@ public class Farm : MonoBehaviour {
     public int countFields = 0;
     public int incomeOnline = 0;
     public int incomeOffline = 0;
-    public IncomeFarmCalculator calculator;
-	// Use this for initialization
-	void Start () {
-		
-	}
-
+    public IncomeFarmCalculator incomeCalculator;
+    public FieldCalculator fieldCalculator;
 
 	// Update is called once per frame
 	void Update () {
 
         if (ID == -1)
             return;
-
+        FieldCalculator();
         IncomeCalculator();
 	}
 
     public void IncomeCalculator()
     {
-        incomeOnline = calculator.GetIncome(ID, level, countFields);
+        incomeOnline = incomeCalculator.GetIncome(ID, level, countFields);
         incomeOffline = incomeOnline / 3;
 
         PlayerProfile.farmIncomes[ID] = incomeOnline;
+    }
+
+    public void FieldCalculator()
+    {
+        countFields = fieldCalculator.GetFields(level);
     }
 }

@@ -5,8 +5,8 @@
       <rank>Landwirt</rank>
       <money>0</money>
       <offlineTime>0</offlineTime>
-      <incomeOffline>0</incomeOffline>
-      <incomeOnline>0</incomeOnline>
+      <incomeOffline>56</incomeOffline>
+      <incomeOnline>170</incomeOnline>
       <farmIDs>
         <int>0</int>
         <int>0</int>
