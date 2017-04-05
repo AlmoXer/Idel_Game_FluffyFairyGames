@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<PlayerContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Players>
+    <Player name="ME">
+      <geld>0</geld>
+      <offlineTime>0</offlineTime>
+      <farmIDs>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+        <int>0</int>
+      </farmIDs>
+    </Player>
+  </Players>
+</PlayerContainer>
