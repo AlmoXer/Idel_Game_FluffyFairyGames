@@ -25,7 +25,7 @@ public class ScreenFader : MonoBehaviour {
         if (FarmArchiv.instance.GetPositionOfIcon(_image.sprite) == -1)
             OpenFarmBuilder();
         else
-            OpenFarmBuilder();
+            OpenFarmDetails();
     }
 
 
