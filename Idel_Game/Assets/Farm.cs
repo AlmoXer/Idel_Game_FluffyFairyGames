@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class Farm : MonoBehaviour {
 
     //public Image icon;
-    public int ID;
-    public int level;
-    public int countFields;
+    public int ID = -1;
+    public int level = 0;
+    public int countFields = 0;
 
 	// Use this for initialization
 	void Start () {
 		
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
 		
