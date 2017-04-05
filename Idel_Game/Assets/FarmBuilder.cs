@@ -19,13 +19,7 @@ public class FarmBuilder : MonoBehaviour {
             return;
         }
         instance = this;
-/*
-        for (int i = 0; i < farms.Length; i++)
-        {
-          farms[i].ID = PlayerProfile.player.farmIDs[i];
-          farms[i].level = PlayerProfile.player.farmLevels[i];
-        }
-        */
+
     }
 
     public void SetFarmID( int _ID)

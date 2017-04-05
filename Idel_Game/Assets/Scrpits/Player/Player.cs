@@ -19,9 +19,9 @@ public class Player
     public int incomeOffline;
     public int incomeOnline;
 
+
     public int[] farmIDs = new int[6];
     public int[] farmLevels = new int[6];
-
 
 }
 

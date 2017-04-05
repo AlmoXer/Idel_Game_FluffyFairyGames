@@ -84,6 +84,7 @@
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\PlayerStats.cs" />
     <Compile Include="Assets\ScreenFader.cs" />
+    <Compile Include="Assets\Scrpits\Farm\IncomeFarmCalculator.cs" />
     <Compile Include="Assets\Scrpits\FarmArchiv.cs" />
     <Compile Include="Assets\Scrpits\FarmBluePrint.cs" />
     <Compile Include="Assets\Scrpits\Player\Player.cs" />

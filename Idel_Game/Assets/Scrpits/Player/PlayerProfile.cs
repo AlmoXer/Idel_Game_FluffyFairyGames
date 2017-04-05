@@ -10,7 +10,9 @@ public class PlayerProfile : MonoBehaviour
     public static PlayerProfile playerProfile;
     public PlayerContainer playerContainer;
 
-    
+    private bool firstTick = true;
+
+    public static int[] farmIncomes = new int[6];
     // Use this for initialization
     void Awake()
     {
@@ -47,12 +49,19 @@ public class PlayerProfile : MonoBehaviour
             saveFile();
         }
 
-        for (int i = 0; i < FarmBuilder.instance.farms.Length; i++)
-        {
-             FarmBuilder.instance.farms[i].ID = player.farmIDs[i];
-            FarmBuilder.instance.farms[i].level = player.farmLevels[i];
-        }
+    }
 
+    public void Update()
+    {
+        if(firstTick)
+        {
+            for (int i = 0; i < FarmBuilder.instance.farms.Length; i++)
+            {
+                FarmBuilder.instance.farms[i].ID = player.farmIDs[i];
+                FarmBuilder.instance.farms[i].level = player.farmLevels[i];
+            }
+            firstTick = false;
+        }
     }
 
     public void createPlayer(string name)
@@ -65,6 +74,13 @@ public class PlayerProfile : MonoBehaviour
 
     public void saveFile()
     {
+        int sum=0;
+        for (int i = 0; i < farmIncomes.Length; i++)
+            sum = +farmIncomes[i];
+
+        player.incomeOnline = sum;
+        player.incomeOffline = sum / 3;
+
         playerContainer.Save(Path.Combine(Application.dataPath, "Saves/players.xml"));
     }
 
