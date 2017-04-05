@@ -5,19 +5,28 @@ using UnityEngine.UI;
 
 public class FarmBuilder : MonoBehaviour {
 
+    public static FarmBuilder instance;
+
     public Farm[] farms;
 
     int lastButtonID = -1;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogError("More than one FarmBuilder in scene!");
+            return;
+        }
+        instance = this;
+/*
+        for (int i = 0; i < farms.Length; i++)
+        {
+          farms[i].ID = PlayerProfile.player.farmIDs[i];
+          farms[i].level = PlayerProfile.player.farmLevels[i];
+        }
+        */
+    }
 
     public void SetFarmID( int _ID)
     {

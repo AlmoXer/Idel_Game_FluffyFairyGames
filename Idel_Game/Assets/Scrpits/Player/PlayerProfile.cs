@@ -10,6 +10,7 @@ public class PlayerProfile : MonoBehaviour
     public static PlayerProfile playerProfile;
     public PlayerContainer playerContainer;
 
+    
     // Use this for initialization
     void Awake()
     {
@@ -25,18 +26,32 @@ public class PlayerProfile : MonoBehaviour
         }
 
         playerContainer = new PlayerContainer();
-        playerContainer = playerContainer.Load(Path.Combine(Application.dataPath, "Saves/players.xml"));
+        if (null != playerContainer.Load(Path.Combine(Application.dataPath, "Saves/players.xml")))
+            playerContainer = playerContainer.Load(Path.Combine(Application.dataPath, "Saves/players.xml"));
 
-        if (playerContainer.Players.Count != 0)
+
+            if (playerContainer.Players.Count != 0)
             player = playerContainer.Players[0];
 
         if (player == null)
         {
             createPlayer("ME");
+            for (int i = 0; i < player.farmIDs.Length; i++)
+            {
+                player.farmIDs[i] = - 1;
+            }
+            for (int i = 0; i < player.farmLevels.Length; i++)
+            {
+                player.farmLevels[i] = 0;
+            }
             saveFile();
         }
-          
 
+        for (int i = 0; i < FarmBuilder.instance.farms.Length; i++)
+        {
+             FarmBuilder.instance.farms[i].ID = player.farmIDs[i];
+            FarmBuilder.instance.farms[i].level = player.farmLevels[i];
+        }
 
     }
 

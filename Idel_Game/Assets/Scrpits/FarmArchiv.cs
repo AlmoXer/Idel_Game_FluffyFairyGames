@@ -15,7 +15,7 @@ public class FarmArchiv : MonoBehaviour {
     {
         if (instance != null)
         {
-            Debug.LogError("More than one ProjektilArchiv in scene!");
+            Debug.LogError("More than one FarmArchiv in scene!");
             return;
         }
         instance = this;
