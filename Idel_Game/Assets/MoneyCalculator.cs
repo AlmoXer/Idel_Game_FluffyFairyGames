@@ -36,29 +36,6 @@ public class MoneyCalculator : MonoBehaviour {
         }
         
     }
-/*
-    void SubMoney(string _money, string _sub)
-    {
-        string stage = _money.Substring(_money.Length - 2);
-        string stageSub = _sub.Substring(_sub.Length - 2);
-
-        string money = _money.Substring(0, _money.Length - 3);
-        string moneySub = _sub.Substring(0, _sub.Length - 3);
-    }
-
-    void addMoney(string _money, string _add)
-    {
-        string stage = _money.Substring(_money.Length - 2);
-        string stageAdd = _add.Substring(_add.Length - 2);
-
-        string money_s = _money.Substring(0, _money.Length - 3);
-        string moneyAdd_s = _add.Substring(0, _add.Length - 3);
-
-        int money = Int32.Parse(money_s);
-        int moneyAdd = Int32.Parse(moneyAdd_s);
-
-
-    }*/
 
     void AddMoney(Money _money, Money _add)
     {

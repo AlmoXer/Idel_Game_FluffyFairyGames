@@ -7,7 +7,7 @@ public class IncomeFarmCalculator : MonoBehaviour {
     public Money[] incomeFarm;
     public int[] faktorFarm;
     [SerializeField]
-    private Money money;
+    private Money money = new Money();
 
     public Money GetIncome(int _ID, int _Level, int _Fields)
     {
