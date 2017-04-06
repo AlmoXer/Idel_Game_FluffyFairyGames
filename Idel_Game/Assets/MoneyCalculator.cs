@@ -5,7 +5,7 @@ using System;
 
 public class MoneyCalculator : MonoBehaviour {
 
-    private Money money;
+    private Money money = new Money();
 
     public Money GetMoneyOffline (Money _money, int DeltaTime)
     {

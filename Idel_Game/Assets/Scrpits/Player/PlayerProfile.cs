@@ -13,10 +13,10 @@ public class PlayerProfile : MonoBehaviour
     private bool firstTick = true;
 
     [SerializeField]
-    public static Money[] farmIncomes;
+    public static Money[] farmIncomes = new Money[6];
 
-    public static Money incomeOffline;
-    private Money money;
+    public static Money incomeOffline = new Money();
+    private Money money = new Money();
     // Use this for initialization
     void Awake()
     {
