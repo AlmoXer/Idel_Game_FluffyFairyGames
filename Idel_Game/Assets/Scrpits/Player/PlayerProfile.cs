@@ -12,6 +12,7 @@ public class PlayerProfile : MonoBehaviour
 
     private bool firstTick = true;
 
+    [SerializeField]
     public static Money[] farmIncomes;
 
     public static Money incomeOffline;

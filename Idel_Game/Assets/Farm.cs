@@ -9,8 +9,8 @@ public class Farm : MonoBehaviour {
     public int ID = -1;
     public int level = 0;
     public int countFields = 0;
-    public Money incomeOnline ;
-    public Money incomeOffline ;
+    public static Money incomeOnline ;
+    public static Money incomeOffline ;
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
 
