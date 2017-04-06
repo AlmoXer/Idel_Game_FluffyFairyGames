@@ -29,9 +29,9 @@
         <int>0</int>
         <int>0</int>
       </money>
-      <offlineTime>-8587101173248815093</offlineTime>
+      <offlineTime>-8587101170595783224</offlineTime>
       <incomeOffline>
-        <int>0</int>
+        <int>64</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -57,7 +57,7 @@
         <int>0</int>
       </incomeOffline>
       <incomeOnline>
-        <int>0</int>
+        <int>640</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -83,7 +83,7 @@
         <int>0</int>
       </incomeOnline>
       <farmIDs>
-        <int>-1</int>
+        <int>0</int>
         <int>-1</int>
         <int>-1</int>
         <int>-1</int>
@@ -91,7 +91,7 @@
         <int>-1</int>
       </farmIDs>
       <farmLevels>
-        <int>0</int>
+        <int>1</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>

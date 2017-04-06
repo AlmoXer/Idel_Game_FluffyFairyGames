@@ -13,7 +13,7 @@ public class StartIncomeUI : MonoBehaviour {
     {
         Money m = moneyCalculator.GetMoneyOffline(PlayerProfile.incomeOffline, timeMaster.GetDeltaTime());
 
-        for (int i = PlayerProfile.player.incomeOffline.Length; i > 0; i--)
+        for (int i = PlayerProfile.player.incomeOffline.Length-1; i > 0; i--)
         {
             if(PlayerProfile.player.incomeOffline[i]>0)
             {
