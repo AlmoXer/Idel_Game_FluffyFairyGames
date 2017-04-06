@@ -30,6 +30,7 @@ public class FarmBuilder : MonoBehaviour {
     public void BuildFarm(Image _image )
     {
         farms[lastButtonID].ID = FarmArchiv.instance.GetPositionOfIcon(_image.sprite);
+        farms[lastButtonID].level = 1;
         PlayerProfile.player.farmIDs[lastButtonID] = farms[lastButtonID].ID;
         PlayerProfile.player.farmLevels[lastButtonID] = 1;
         lastButtonID = -1;

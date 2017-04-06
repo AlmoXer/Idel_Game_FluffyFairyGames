@@ -5,6 +5,7 @@ using System.IO;
 
 public class PlayerProfile : MonoBehaviour
 {
+    public ScreenFader fader;
 
     public static Player player;
     public static PlayerProfile playerProfile;
@@ -47,30 +48,29 @@ public class PlayerProfile : MonoBehaviour
         if (player == null)
         {
             createPlayer("ME");
-            for (int i = 0; i < player.farmIDs.Length; i++)
-            {
+            for (int i = 0; i < player.farmIDs.Length; i++)            
                 player.farmIDs[i] = - 1;
-            }
-            for (int i = 0; i < player.farmLevels.Length; i++)
-            {
-                player.farmLevels[i] = 0;
-            }
+            
+            for (int i = 0; i < player.farmLevels.Length; i++)            
+                player.farmLevels[i] = 0;           
 
-            for (int i = 0; i < player.incomeOffline.Length; i++)
-            {
+            for (int i = 0; i < player.incomeOffline.Length; i++)           
                 player.incomeOffline[i] = 0;
-            }
-            for (int i = 0; i < player.incomeOnline.Length; i++)
-            {
+            
+            for (int i = 0; i < player.incomeOnline.Length; i++)           
                 player.incomeOnline[i] = 0;
-            }
 
             for (int i = 0; i < player.money.Length; i++)
-            {
-                player.money[i] = 0;
-            }
+                if (i != 4)
+                    player.money[i] = 0;
+                else
+                    player.money[i] = 100;           
 
             saveFile();
+        }
+        else
+        {
+            fader.OpenIncomeOffline();
         }
 
     }

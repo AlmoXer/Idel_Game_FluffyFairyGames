@@ -6,6 +6,7 @@ public class ScreenFader : MonoBehaviour {
 
     public GameObject farmDetails;
     public GameObject farmBuilder;
+    public GameObject incomeOffline;
 
     [SerializeField]
     private GameObject lastScreen;
@@ -28,6 +29,11 @@ public class ScreenFader : MonoBehaviour {
             OpenFarmDetails();
     }
 
+    public void OpenIncomeOffline()
+    {
+        incomeOffline.SetActive(true);
+        lastScreen = incomeOffline;
+    }
 
     public void OpenFarmDetails()
     {

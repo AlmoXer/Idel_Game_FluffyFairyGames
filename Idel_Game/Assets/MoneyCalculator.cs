@@ -6,29 +6,37 @@ using System;
 public class MoneyCalculator : MonoBehaviour {
 
     private Money money = new Money();
-
+    private Money earnOffline = new Money();
     public Money GetMoneyOffline (Money _money, int DeltaTime)
     {
-        for (int i = 0; i < money.money.Length; i++)
-            money.money[i] = 0;
+        for (int i = 0; i < money.money.Length; i++)       
+            money.money[i] = _money.money[i] * DeltaTime;
+                         
 
         for (int i = 0; i < money.money.Length; i++)
         {
-            money.money[i] = _money.money[i] * DeltaTime;
-
             do {
-                if (_money.money[i] > 1000)
+                if (money.money[i] > 1000)
                 {
-                    _money.money[i] -= 1000;
-                    _money.money[i + 1]++;
+                    money.money[i] -= 1000;
+                    money.money[i + 1]++;
                 }
             }
-            while (_money.money[i] > 1000) ;
+            while (money.money[i] > 1000) ;
         }
-
+        earnOffline = money;
         return money;
     }
 
+    public void SetMoneyOffline()
+    {
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
+        {
+            PlayerProfile.player.money[i] += earnOffline.money[i];
+        }
+        
+    }
+/*
     void SubMoney(string _money, string _sub)
     {
         string stage = _money.Substring(_money.Length - 2);
@@ -50,7 +58,7 @@ public class MoneyCalculator : MonoBehaviour {
         int moneyAdd = Int32.Parse(moneyAdd_s);
 
 
-    }
+    }*/
 
     void AddMoney(Money _money, Money _add)
     {
