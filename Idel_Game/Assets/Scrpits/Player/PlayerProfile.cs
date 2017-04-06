@@ -12,7 +12,6 @@ public class PlayerProfile : MonoBehaviour
 
     private bool firstTick = true;
 
-    [SerializeField]
     public static Money[] farmIncomes = new Money[6];
 
     public static Money incomeOffline = new Money();
@@ -20,6 +19,7 @@ public class PlayerProfile : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+
         if (playerProfile)
         {
             DestroyImmediate(gameObject);
@@ -29,6 +29,11 @@ public class PlayerProfile : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             playerProfile = this;
+        }
+
+        for (int i = 0; i < farmIncomes.Length; i++)
+        {
+            farmIncomes[i] = money;
         }
 
         playerContainer = new PlayerContainer();
@@ -50,6 +55,21 @@ public class PlayerProfile : MonoBehaviour
             {
                 player.farmLevels[i] = 0;
             }
+
+            for (int i = 0; i < player.incomeOffline.Length; i++)
+            {
+                player.incomeOffline[i] = 0;
+            }
+            for (int i = 0; i < player.incomeOnline.Length; i++)
+            {
+                player.incomeOnline[i] = 0;
+            }
+
+            for (int i = 0; i < player.money.Length; i++)
+            {
+                player.money[i] = 0;
+            }
+
             saveFile();
         }
 

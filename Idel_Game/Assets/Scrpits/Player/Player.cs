@@ -14,6 +14,7 @@ public class Player
     public string playerName = "Me";
 
     public string rank = "Landwirt";
+
     public int[] money = new int[24];
     public long offlineTime;
     public int[] incomeOffline = new int[24];

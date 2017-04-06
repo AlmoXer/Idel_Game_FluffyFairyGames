@@ -26,9 +26,12 @@ public class PlayerContainer
     public PlayerContainer Load(string path)
     {
         var serializer = new XmlSerializer(typeof(PlayerContainer));
+       if(File.Exists(path))
         using (var stream = new FileStream(path, FileMode.Open))
         {
-            return serializer.Deserialize(stream) as PlayerContainer;
+            var a = serializer.Deserialize(stream) as PlayerContainer;
+            return a ;
         }
+        return null;
     }
 }
