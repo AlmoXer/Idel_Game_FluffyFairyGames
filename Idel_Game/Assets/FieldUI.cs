@@ -11,11 +11,15 @@ public class FieldUI : MonoBehaviour {
  
     // Use this for initialization
     void Start () {
-
+        field = FindObjectOfType<Field>();
 	}
 
 	void Update () {
-
+        if(status!=field.status)
+        {
+            status = field.status;
+            icon.sprite = FieldArchiv.instance.allFields[field.ID].stage[status];
+        }
 	}
 
 

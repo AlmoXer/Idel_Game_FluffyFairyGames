@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Field : MonoBehaviour {
 
-    private int status;
+    public int status;
     public int ID = -1;
 
     private float updateRate = 2.5f;
@@ -23,6 +23,8 @@ public class Field : MonoBehaviour {
 
     void NextStatus()
     {
-
+        status++;
+        if (status == 4)
+            status = 0;
     }
 }
