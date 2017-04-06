@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class IncomeFarmCalculator : MonoBehaviour {
 
-    public int[] incomeFarm;
+    public Money[] incomeFarm;
     public int[] faktorFarm;
+    [SerializeField]
+    private Money money;
 
-    public int GetIncome(int _ID, int _Level, int _Fields)
+    public Money GetIncome(int _ID, int _Level, int _Fields)
     {
         if( _ID >= 0 && _ID <= incomeFarm.Length)
         {
-            return ((incomeFarm[_ID]*_Fields + _Level*incomeFarm[_ID])*faktorFarm[_ID]);
+
+            for (int i = 0; i < money.money.Length; i++)
+            {
+                money.money[i] = (incomeFarm[_ID].money[i] * _Fields + _Level * incomeFarm[_ID].money[i]) * faktorFarm[_ID];
+            }        
+
+            return (money);
         }
 
-        return 0;
+        return null;
     }
 }

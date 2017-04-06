@@ -12,7 +12,10 @@ public class PlayerProfile : MonoBehaviour
 
     private bool firstTick = true;
 
-    public static int[] farmIncomes = new int[6];
+    public static Money[] farmIncomes;
+
+    public static Money incomeOffline;
+    private Money money;
     // Use this for initialization
     void Awake()
     {
@@ -64,12 +67,23 @@ public class PlayerProfile : MonoBehaviour
             return;
         }
 
-        int sum = 0;
-        for (int i = 0; i < farmIncomes.Length; i++)
-            sum += farmIncomes[i];
-
-        player.incomeOnline = sum;
-        player.incomeOffline = sum / 3;
+        //Income Summe wird auf 0 gesetz
+        for (int i = 0; i < money.money.Length; i++)       
+            money.money[i] = 0;
+        //Income Summe wird Berechnet
+        for (int i = 0; i < farmIncomes.Length; i++)        
+            for (int j = 0; j < money.money.Length; j++)
+                money.money[j] += farmIncomes[i].money[j];
+        //Income Summe wird auf den Spieler übertragen
+        for (int i = 0; i < money.money.Length; i++)              
+            player.incomeOnline[i] = money.money[i];
+        //Income Summe Offline wird auf den Spieler übertragen
+        for (int i = 0; i < money.money.Length; i++)
+        {
+            player.incomeOffline[i] = money.money[i] / 10;
+            incomeOffline.money[i] = money.money[i] / 10;
+        }
+            
     }
 
     public void createPlayer(string name)

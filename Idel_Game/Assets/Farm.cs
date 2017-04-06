@@ -9,8 +9,8 @@ public class Farm : MonoBehaviour {
     public int ID = -1;
     public int level = 0;
     public int countFields = 0;
-    public int incomeOnline = 0;
-    public int incomeOffline = 0;
+    public Money incomeOnline ;
+    public Money incomeOffline ;
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
 
@@ -26,7 +26,7 @@ public class Farm : MonoBehaviour {
     public void IncomeCalculator()
     {
         incomeOnline = incomeCalculator.GetIncome(ID, level, countFields);
-        incomeOffline = incomeOnline / 3;
+        //incomeOffline = incomeOnline / 3;
 
         PlayerProfile.farmIncomes[ID] = incomeOnline;
     }

@@ -5,11 +5,28 @@ using System;
 
 public class MoneyCalculator : MonoBehaviour {
 
-    void GetMoney(string _money)
+    private Money money;
+
+    public Money GetMoneyOffline (Money _money, int DeltaTime)
     {
+        for (int i = 0; i < money.money.Length; i++)
+            money.money[i] = 0;
 
+        for (int i = 0; i < money.money.Length; i++)
+        {
+            money.money[i] = _money.money[i] * DeltaTime;
 
+            do {
+                if (_money.money[i] > 1000)
+                {
+                    _money.money[i] -= 1000;
+                    _money.money[i + 1]++;
+                }
+            }
+            while (_money.money[i] > 1000) ;
+        }
 
+        return money;
     }
 
     void SubMoney(string _money, string _sub)
@@ -40,10 +57,9 @@ public class MoneyCalculator : MonoBehaviour {
 
         for (int i = 0; i < _money.money.Length; i++)
         {
+            _money.money[i] += _add.money[i];
             do
             {
-                _money.money[i] += _add.money[i];
-
                 if (_money.money[i] > 1000)
                 {
                     _money.money[i] -= 1000;
@@ -54,4 +70,6 @@ public class MoneyCalculator : MonoBehaviour {
         }
        
     }
+
+     
 }

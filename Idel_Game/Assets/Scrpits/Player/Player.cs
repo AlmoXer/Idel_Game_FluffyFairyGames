@@ -16,8 +16,8 @@ public class Player
     public string rank = "Landwirt";
     public int[] money = new int[24];
     public long offlineTime;
-    public int incomeOffline;
-    public int incomeOnline;
+    public int[] incomeOffline = new int[24];
+    public int[] incomeOnline = new int[24];
 
 
     public int[] farmIDs = new int[6];
