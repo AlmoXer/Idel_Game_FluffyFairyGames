@@ -3,8 +3,8 @@
   <Players>
     <Player name="ME">
       <rank>Landwirt</rank>
-      <money>0</money>
-      <offlineTime>-8587101815169696049</offlineTime>
+      <money />
+      <offlineTime>-8587101260298823648</offlineTime>
       <incomeOffline>56</incomeOffline>
       <incomeOnline>170</incomeOnline>
       <farmIDs>
