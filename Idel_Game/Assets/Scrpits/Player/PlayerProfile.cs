@@ -34,7 +34,7 @@ public class PlayerProfile : MonoBehaviour
 
         for (int i = 0; i < farmIncomes.Length; i++)
         {
-            farmIncomes[i] = money;
+            farmIncomes[i] = new Money();
         }
 
         playerContainer = new PlayerContainer();

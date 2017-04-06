@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Farm : MonoBehaviour {
 
     //public Image icon;
+    public int POS;
     public int ID = -1;
     public int level = 0;
     public int countFields = 0;
@@ -26,9 +27,7 @@ public class Farm : MonoBehaviour {
     public void IncomeCalculator()
     {
         incomeOnline = incomeCalculator.GetIncome(ID, level, countFields);
-        //incomeOffline = incomeOnline / 3;
-
-        PlayerProfile.farmIncomes[ID] = incomeOnline;
+        PlayerProfile.farmIncomes[POS] = incomeOnline;
     }
 
     public void FieldCalculator()

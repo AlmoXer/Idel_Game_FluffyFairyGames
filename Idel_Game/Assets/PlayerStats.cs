@@ -21,9 +21,6 @@ public class PlayerStats : MonoBehaviour {
         //Income Offline Anzeigen
         for (int i = PlayerProfile.player.incomeOffline.Length - 1; i >= 0; i--)
         {
-            if (i == 0)
-                Debug.Log("");
-
             if (PlayerProfile.player.incomeOffline[i] > 0)
             {
                 string text;
@@ -31,7 +28,6 @@ public class PlayerStats : MonoBehaviour {
                     text = PlayerProfile.player.incomeOffline[i].ToString() + "." + (PlayerProfile.player.incomeOffline[i - 1] / 10).ToString() + " " + (char)(i + 97);
                 else
                     text = PlayerProfile.player.incomeOffline[i].ToString() + " " + (char)(i + 97);
-
 
                 incomeOffline.text = text;
                 break;
@@ -72,7 +68,7 @@ public class PlayerStats : MonoBehaviour {
                 break;
             }
 
-            if (i == 0)
+            if (i <= 0)
                 money.text = "Pleite";
         }
 
