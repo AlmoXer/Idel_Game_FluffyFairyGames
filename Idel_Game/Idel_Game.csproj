@@ -81,10 +81,14 @@
     <Compile Include="Assets\FarmBuilderIteamCreater.cs" />
     <Compile Include="Assets\FarmIteamUI.cs" />
     <Compile Include="Assets\FarmUI.cs" />
+    <Compile Include="Assets\Field.cs" />
+    <Compile Include="Assets\FieldArchiv.cs" />
+    <Compile Include="Assets\FieldUI.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\MoneyCalculator.cs" />
     <Compile Include="Assets\PlayerStats.cs" />
     <Compile Include="Assets\ScreenFader.cs" />
+    <Compile Include="Assets\Scrpits\Farm\FieldBluePrint.cs" />
     <Compile Include="Assets\Scrpits\Farm\FieldCalculator.cs" />
     <Compile Include="Assets\Scrpits\Farm\IncomeFarmCalculator.cs" />
     <Compile Include="Assets\Scrpits\FarmArchiv.cs" />
