@@ -7,6 +7,7 @@ public class MoneyCalculator : MonoBehaviour {
 
     private Money money = new Money();
     private Money earnOffline = new Money();
+
     public Money GetMoneyOffline (Money _money, int DeltaTime)
     {
         for (int i = 0; i < money.money.Length; i++)       
@@ -37,7 +38,7 @@ public class MoneyCalculator : MonoBehaviour {
         
     }
 
-    void AddMoney(Money _money, Money _add)
+    public void AddMoney(Money _money, Money _add)
     {
 
         for (int i = 0; i < _money.money.Length; i++)

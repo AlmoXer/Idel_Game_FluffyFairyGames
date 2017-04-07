@@ -35,6 +35,7 @@ public class FieldBuilder : MonoBehaviour {
 
             field.ID = farm.ID;
             field.farmID = farm.POS;
+            field.level = farm.level;
             field.GetComponent<FieldUI>().icon.sprite = FieldArchiv.instance.allFields[farm.ID].stage[0];
             countfields++;
             farm.tractor.SetActive(true);
