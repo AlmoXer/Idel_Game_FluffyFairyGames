@@ -7,6 +7,8 @@ public class Field : MonoBehaviour {
     public int status;
     public int ID = -1;
 
+    public int farmID = -1;
+
     private float updateRate = 2.5f;
     private float updateCountDown = 2.5f;
 

@@ -34,6 +34,7 @@ public class FieldBuilder : MonoBehaviour {
              field.transform.SetParent(transform, false);
 
              field.ID = farm.ID;
+            field.farmID = farm.POS;
              field.GetComponent<FieldUI>().icon.sprite = FieldArchiv.instance.allFields[farm.ID].stage[0];
             countfields++;
         }

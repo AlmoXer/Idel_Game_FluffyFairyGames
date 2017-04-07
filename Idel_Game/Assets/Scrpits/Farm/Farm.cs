@@ -14,6 +14,7 @@ public class Farm : MonoBehaviour {
     public Money incomeOffline ;
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
+    public Tractor tractor;
 
 	// Update is called once per frame
 	void Update () {

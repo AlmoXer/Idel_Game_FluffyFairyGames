@@ -7,13 +7,15 @@ public class TractorUI : MonoBehaviour {
 
     public Tractor tractor;
     public Image icon;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
+    private int ID=-1;
 	// Update is called once per frame
 	void Update () {
-		
+		if(tractor.ID!=ID)
+        {
+            ID = tractor.ID;
+            icon.sprite = TractorArchiv.instance.allTraktors[tractor.ID].icon;
+           
+        }
+
 	}
 }

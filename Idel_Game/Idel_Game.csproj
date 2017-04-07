@@ -82,8 +82,8 @@
     <Compile Include="Assets\Scrpits\Archive\FarmBluePrint.cs" />
     <Compile Include="Assets\Scrpits\Archive\FieldArchiv.cs" />
     <Compile Include="Assets\Scrpits\Archive\FieldBluePrint.cs" />
-    <Compile Include="Assets\Scrpits\Archive\TraktorArchiv.cs" />
-    <Compile Include="Assets\Scrpits\Archive\TraktorBluePrint.cs" />
+    <Compile Include="Assets\Scrpits\Archive\TractorArchiv.cs" />
+    <Compile Include="Assets\Scrpits\Archive\TractorBluePrint.cs" />
     <Compile Include="Assets\Scrpits\Calculator\IncomeFarmCalculator.cs" />
     <Compile Include="Assets\Scrpits\Calculator\MoneyCalculator.cs" />
     <Compile Include="Assets\Scrpits\Farm\Farm.cs" />
@@ -101,8 +101,9 @@
     <Compile Include="Assets\Scrpits\Player\PlayerProfile.cs" />
     <Compile Include="Assets\Scrpits\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scrpits\TimeMaster.cs" />
-    <Compile Include="Assets\Scrpits\Traktor\Tractor.cs" />
-    <Compile Include="Assets\Scrpits\Traktor\TractorUI.cs" />
+    <Compile Include="Assets\Scrpits\Tractor\Tractor.cs" />
+    <Compile Include="Assets\Scrpits\Tractor\TractorMovement.cs" />
+    <Compile Include="Assets\Scrpits\Tractor\TractorUI.cs" />
     <Compile Include="Assets\StartIncomeUI.cs" />
   </ItemGroup>
   <ItemGroup>

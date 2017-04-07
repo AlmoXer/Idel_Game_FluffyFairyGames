@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TraktorArchiv : MonoBehaviour {
+public class TractorArchiv : MonoBehaviour {
 
-    public static TraktorArchiv instance;
+    public static TractorArchiv instance;
 
-    public TraktorBluePrint[] traktors;
+    public TractorBluePrint[] traktors;
 
-    public Dictionary<int, TraktorBluePrint> allTraktors = new Dictionary<int, TraktorBluePrint>();
+    public Dictionary<int, TractorBluePrint> allTraktors = new Dictionary<int, TractorBluePrint>();
 
 
     void Awake()
