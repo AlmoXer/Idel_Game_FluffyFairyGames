@@ -14,13 +14,16 @@ public class Farm : MonoBehaviour {
     public Money incomeOffline ;
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
-    public Tractor tractor;
+    public GameObject tractor;
 
 	// Update is called once per frame
 	void Update () {
 
         if (ID == -1)
+        {
+            tractor.SetActive(false);
             return;
+        }
         FieldCalculator();
         IncomeCalculator();
 	}
@@ -33,6 +36,10 @@ public class Farm : MonoBehaviour {
 
     public void FieldCalculator()
     {
-        countFields = fieldCalculator.GetFields(level);
+        if(countFields != fieldCalculator.GetFields(level))
+        {           
+            countFields = fieldCalculator.GetFields(level);
+        }
+
     }
 }

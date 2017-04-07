@@ -23,20 +23,21 @@ public class FieldBuilder : MonoBehaviour {
 
         if(farm.countFields != countfields)
         {
-             RectTransform myRect = GetComponent<RectTransform>();
-             buttonHeight = 30;
-             buttonWidth = 30;
-             GridLayoutGroup grid = this.GetComponent<GridLayoutGroup>();
-             grid.cellSize = new Vector2(buttonWidth, buttonHeight);
+            RectTransform myRect = GetComponent<RectTransform>();
+            buttonHeight = 30;
+            buttonWidth = 30;
+            GridLayoutGroup grid = this.GetComponent<GridLayoutGroup>();
+            grid.cellSize = new Vector2(buttonWidth, buttonHeight);
 
 
-             field = (Field)Instantiate(prefab);
-             field.transform.SetParent(transform, false);
+            field = (Field)Instantiate(prefab);
+            field.transform.SetParent(transform, false);
 
-             field.ID = farm.ID;
+            field.ID = farm.ID;
             field.farmID = farm.POS;
-             field.GetComponent<FieldUI>().icon.sprite = FieldArchiv.instance.allFields[farm.ID].stage[0];
+            field.GetComponent<FieldUI>().icon.sprite = FieldArchiv.instance.allFields[farm.ID].stage[0];
             countfields++;
+        //    farm.tractor.SetActive(true);
         }
       
 

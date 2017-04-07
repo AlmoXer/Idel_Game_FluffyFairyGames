@@ -25,10 +25,13 @@ public class TractorMovement : MonoBehaviour
     {
         GameObject[] allfields = GameObject.FindGameObjectsWithTag("Field");
         GameObject[] waypoints = new GameObject[14];
+
+
         int iCount = 0;
         for (int i = 0; i < allfields.Length; i++)
         {
-            if (allfields[i].GetComponent<Field>().farmID != tractor.farm.POS)
+            int farmID = allfields[i].GetComponent<Field>().farmID;
+            if (farmID == tractor.farm.POS)
             {
                 waypoints[iCount] = allfields[i];
                 iCount++;
@@ -36,24 +39,33 @@ public class TractorMovement : MonoBehaviour
             }
         }
 
-
-        iCount=0;
-        foreach (GameObject item in waypoints)
+        if (waypoints[0] != null)
         {
-            if (iCount == wavepointIndex)
-                target = item.GetComponent<RectTransform>();
-            iCount++;
+            iCount = 0;
+            foreach (GameObject item in waypoints)
+            {
+                if (iCount == wavepointIndex)
+                    target = item.GetComponent<RectTransform>();
+                iCount++;
+            }
         }
-       Vector2 dir = target.position - transform.position;
-       transform.Translate(dir.normalized * tractor.speed * Time.deltaTime, Space.World); 
+        if(target != null)
+        {
+            Vector2 dir = target.position - transform.position;
+            transform.Translate(dir.normalized * tractor.speed * Time.deltaTime, Space.World);
+
+
+            if (Vector3.Distance(transform.position, target.position) <= 3f)
+            {
+                 EndPath();
+                 return;
+             }
+        }
+
         
 
 
-        if (Vector3.Distance(transform.position, target.position) <= 3f)
-        {
-            EndPath();
-            return;
-        }
+
     }
 
     void GetNextWaypoint()
