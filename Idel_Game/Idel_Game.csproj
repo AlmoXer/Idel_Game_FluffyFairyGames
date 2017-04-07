@@ -83,6 +83,7 @@
     <Compile Include="Assets\FarmUI.cs" />
     <Compile Include="Assets\Field.cs" />
     <Compile Include="Assets\FieldArchiv.cs" />
+    <Compile Include="Assets\FieldBuilder.cs" />
     <Compile Include="Assets\FieldUI.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\MoneyCalculator.cs" />

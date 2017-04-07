@@ -81,6 +81,7 @@ public class PlayerProfile : MonoBehaviour
         {
             for (int i = 0; i < FarmBuilder.instance.farms.Length; i++)
             {
+
                 FarmBuilder.instance.farms[i].ID = player.farmIDs[i];
                 FarmBuilder.instance.farms[i].level = player.farmLevels[i];
             }
