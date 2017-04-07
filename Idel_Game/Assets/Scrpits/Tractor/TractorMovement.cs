@@ -18,7 +18,7 @@ public class TractorMovement : MonoBehaviour
     void Start()
     {
 
-        tractor = GetComponent<Tractor>();
+        tractor = this.GetComponent<Tractor>();
     }
 
     void Update()
@@ -31,6 +31,7 @@ public class TractorMovement : MonoBehaviour
         for (int i = 0; i < allfields.Length; i++)
         {
             int farmID = allfields[i].GetComponent<Field>().farmID;
+
             if (farmID == tractor.farm.POS)
             {
                 waypoints[iCount] = allfields[i];
