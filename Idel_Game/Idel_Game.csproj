@@ -76,29 +76,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\DetailsFarmUI.cs" />
-    <Compile Include="Assets\Farm.cs" />
-    <Compile Include="Assets\FarmBuilder.cs" />
-    <Compile Include="Assets\FarmBuilderIteamCreater.cs" />
-    <Compile Include="Assets\FarmIteamUI.cs" />
-    <Compile Include="Assets\FarmUI.cs" />
-    <Compile Include="Assets\Field.cs" />
-    <Compile Include="Assets\FieldArchiv.cs" />
-    <Compile Include="Assets\FieldBuilder.cs" />
-    <Compile Include="Assets\FieldUI.cs" />
     <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\MoneyCalculator.cs" />
-    <Compile Include="Assets\PlayerStats.cs" />
     <Compile Include="Assets\ScreenFader.cs" />
-    <Compile Include="Assets\Scrpits\Farm\FieldBluePrint.cs" />
-    <Compile Include="Assets\Scrpits\Farm\FieldCalculator.cs" />
-    <Compile Include="Assets\Scrpits\Farm\IncomeFarmCalculator.cs" />
-    <Compile Include="Assets\Scrpits\FarmArchiv.cs" />
-    <Compile Include="Assets\Scrpits\FarmBluePrint.cs" />
+    <Compile Include="Assets\Scrpits\Archive\FarmArchiv.cs" />
+    <Compile Include="Assets\Scrpits\Archive\FarmBluePrint.cs" />
+    <Compile Include="Assets\Scrpits\Archive\FieldArchiv.cs" />
+    <Compile Include="Assets\Scrpits\Archive\FieldBluePrint.cs" />
+    <Compile Include="Assets\Scrpits\Archive\TraktorArchiv.cs" />
+    <Compile Include="Assets\Scrpits\Archive\TraktorBluePrint.cs" />
+    <Compile Include="Assets\Scrpits\Calculator\IncomeFarmCalculator.cs" />
+    <Compile Include="Assets\Scrpits\Calculator\MoneyCalculator.cs" />
+    <Compile Include="Assets\Scrpits\Farm\Farm.cs" />
+    <Compile Include="Assets\Scrpits\Farm\FarmBuilder.cs" />
+    <Compile Include="Assets\Scrpits\Farm\FarmBuilderIteamCreater.cs" />
+    <Compile Include="Assets\Scrpits\Farm\FarmIteamUI.cs" />
+    <Compile Include="Assets\Scrpits\Farm\FarmUI.cs" />
+    <Compile Include="Assets\Scrpits\Field\Field.cs" />
+    <Compile Include="Assets\Scrpits\Field\FieldBuilder.cs" />
+    <Compile Include="Assets\Scrpits\Field\FieldUI.cs" />
+    <Compile Include="Assets\Scrpits\FieldCalculator.cs" />
     <Compile Include="Assets\Scrpits\Money.cs" />
     <Compile Include="Assets\Scrpits\Player\Player.cs" />
     <Compile Include="Assets\Scrpits\Player\PlayerContainer.cs" />
     <Compile Include="Assets\Scrpits\Player\PlayerProfile.cs" />
+    <Compile Include="Assets\Scrpits\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scrpits\TimeMaster.cs" />
+    <Compile Include="Assets\Scrpits\Traktor\Tractor.cs" />
+    <Compile Include="Assets\Scrpits\Traktor\TractorUI.cs" />
     <Compile Include="Assets\StartIncomeUI.cs" />
   </ItemGroup>
   <ItemGroup>
