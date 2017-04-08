@@ -17,6 +17,12 @@ public class TractorMovement : MonoBehaviour
     [SerializeField]
     private int countActiveWayPoints;
     private bool driveHome = false;
+    private bool load = false;
+
+
+    private float loadRate = 1.5f;
+    private float loadCountDown = 1.5f;
+
     void Start()
     {
         tractor = this.GetComponent<Tractor>();
@@ -56,20 +62,34 @@ public class TractorMovement : MonoBehaviour
 
         if(target != null)
         {
-            Vector2 dir = target.position - transform.position;
-            transform.Translate(dir.normalized * tractor.speed * Time.deltaTime, Space.World);
-
-
-            if (Vector3.Distance(transform.position, target.position) <= 0.5f)
+            if(!load)
             {
-                if (driveHome)
-                    wavepointIndex = -1;
-                
-                GetNextWaypoint();
-             }
+                Vector2 dir = target.position - transform.position;
+                transform.Translate(dir.normalized * tractor.speed * Time.deltaTime, Space.World);
+
+
+                if (Vector3.Distance(transform.position, target.position) <= 0.5f)
+                {
+                    if (driveHome)
+                    {
+                        wavepointIndex = -1;
+                        tractor.UnloadCharge();
+                    }
+                        
+                    GetNextWaypoint();
+
+                }
+            }
         }
 
-        
+        if (loadCountDown <= 0f)
+        {
+            load = false;
+        }
+
+        loadCountDown -= Time.deltaTime;
+
+
 
 
 
@@ -84,7 +104,10 @@ public class TractorMovement : MonoBehaviour
           }
           wavepointIndex++;
           target = waypoints[wavepointIndex].GetComponent<RectTransform>();
-          driveHome = false;     
+        tractor.LoadCharge(waypoints[wavepointIndex]);
+        driveHome = false;
+        load = true;
+        loadCountDown = loadRate;
     }
 
     void EndPath()

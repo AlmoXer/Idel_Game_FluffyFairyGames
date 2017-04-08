@@ -4,8 +4,8 @@
     <Player name="ME">
       <rank>Landwirt</rank>
       <money>
-        <int>7360</int>
-        <int>250</int>
+        <int>8828</int>
+        <int>251</int>
         <int>0</int>
         <int>0</int>
         <int>100</int>
@@ -29,7 +29,7 @@
         <int>0</int>
         <int>0</int>
       </money>
-      <offlineTime>-8587099973488693313</offlineTime>
+      <offlineTime>-8587099953573876650</offlineTime>
       <incomeOffline>
         <int>2</int>
         <int>0</int>

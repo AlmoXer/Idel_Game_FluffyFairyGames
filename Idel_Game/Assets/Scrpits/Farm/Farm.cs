@@ -12,6 +12,8 @@ public class Farm : MonoBehaviour {
     public int countFields = 0;
     public Money incomeOnline ;
     public Money incomeOffline ;
+    public Money stack = new Money();
+
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
     public GameObject tractor;
