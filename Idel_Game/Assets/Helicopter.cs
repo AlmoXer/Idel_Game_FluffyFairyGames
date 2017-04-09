@@ -9,6 +9,7 @@ public class Helicopter : MonoBehaviour {
     public Money charge = new Money();
     private MoneyCalculator moneyCalculator;
 
+
     private void Start()
     {
         moneyCalculator = this.GetComponent<MoneyCalculator>();

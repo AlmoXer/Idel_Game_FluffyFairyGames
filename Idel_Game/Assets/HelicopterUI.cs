@@ -10,6 +10,7 @@ public class HelicopterUI : MonoBehaviour {
     public Helicopter helicopoter;
 	// Update is called once per frame
 	void Update () {
-		
+
+
 	}
 }

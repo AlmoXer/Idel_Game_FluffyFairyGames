@@ -10,10 +10,13 @@ public class FieldCalculator : MonoBehaviour {
 
     public int GetFields(int _Level)
     {
+        fields = 0;
         if (_Level> 0)
         {
-            if (nextFieldPoint[fields] == _Level)
-                fields++;
+            do
+                if (nextFieldPoint[fields] <= _Level)
+                    fields++;
+            while (_Level > nextFieldPoint[fields]);
             return fields;
         }
 
