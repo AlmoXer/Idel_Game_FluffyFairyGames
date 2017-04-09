@@ -13,8 +13,7 @@ public class TractorUI : MonoBehaviour {
 		if(tractor.ID!=ID)
         {
             ID = tractor.ID;
-            icon.sprite = TractorArchiv.instance.allTraktors[tractor.ID].icon;
-           
+            icon.sprite = TractorArchiv.instance.allTraktors[tractor.ID].icon;       
         }
 
 	}

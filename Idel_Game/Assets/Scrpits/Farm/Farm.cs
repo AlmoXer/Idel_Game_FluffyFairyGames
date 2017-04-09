@@ -18,6 +18,7 @@ public class Farm : MonoBehaviour {
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
     public GameObject tractor;
+    public GameObject helipad;
 
     public MoneyCalculator moneyCalculator;
 
@@ -31,6 +32,7 @@ public class Farm : MonoBehaviour {
         if (ID == -1)
         {
             tractor.SetActive(false);
+            helipad.SetActive(false);
             return;
         }
         FieldCalculator();

@@ -54,6 +54,7 @@ public class FieldBuilder : MonoBehaviour {
             field.GetComponent<FieldUI>().icon.sprite = FieldArchiv.instance.allFields[farm.ID].stage[0];
             countfields++;
             farm.tractor.SetActive(true);
+            farm.helipad.SetActive(true);
         }
       
 

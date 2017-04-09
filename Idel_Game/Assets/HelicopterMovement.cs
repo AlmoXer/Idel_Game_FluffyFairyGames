@@ -30,13 +30,47 @@ public class HelicopterMovement : MonoBehaviour
         helicopter = this.GetComponent<Helicopter>();
 
        allHelipads = GameObject.FindGameObjectsWithTag("Helipad");
-        target = allHelipads[0].GetComponent<RectTransform>();
+        target = helicopter.home.GetComponent<RectTransform>();
     }
 
     void Update()
     {
-        allHelipads = GameObject.FindGameObjectsWithTag("Helipad");   
-        countActiveWayPoints = allHelipads.Length +1;
+        allHelipads = GameObject.FindGameObjectsWithTag("Helipad");
+        countActiveWayPoints = 0;
+        int iCount = 0;
+        for (int i = 0; i < allHelipads.Length; i++)
+        {
+            int farmID = allHelipads[i].GetComponent<Helipad>().ID;
+
+            waypoints[farmID] = allHelipads[i];
+            iCount++;
+            
+        }
+
+        countActiveWayPoints = iCount + 1;
+
+        for (int i = 0; i < (countActiveWayPoints-1); i++)
+        {
+            if(waypoints[i] == null)
+            {
+                for (int j = i; j < waypoints.Length-1; j++)
+                {
+                    waypoints[j] = waypoints[j + 1];
+                }
+                //Wenn immer noch Null erneut durchlaufen
+                if (waypoints[i] == null && i != (countActiveWayPoints - 1))
+                    i--;
+                bool empty = true;
+                for (int j = i; j < waypoints.Length - 1; j++)               
+                    if (waypoints[j] != null)
+                        empty =false;
+                if (empty)
+                    break;
+                
+            }
+        }
+
+      
 
         if (target != null)
         {
@@ -70,7 +104,7 @@ public class HelicopterMovement : MonoBehaviour
             load = false;
 
             if (!driveHome)
-                helicopter.LoadCharge(allHelipads[wavepointIndex]);
+                helicopter.LoadCharge(waypoints[wavepointIndex]);
 
             GetNextWaypoint();
 
@@ -91,7 +125,7 @@ public class HelicopterMovement : MonoBehaviour
         }
 
         wavepointIndex++;
-        target = allHelipads[wavepointIndex].GetComponent<RectTransform>();
+        target = waypoints[wavepointIndex].GetComponent<RectTransform>();
         driveHome = false;
 
 
