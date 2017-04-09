@@ -137,6 +137,6 @@ public class MoneyCalculator : MonoBehaviour {
                 return text;
             }
         }
-        return "00000a";
+        return "0 a";
     }
 }

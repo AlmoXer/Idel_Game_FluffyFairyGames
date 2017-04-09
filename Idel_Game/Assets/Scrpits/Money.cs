@@ -5,6 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class Money {
 
-   public int[] money = new int[24];
+   public int[] money = new int[27];
 
 }

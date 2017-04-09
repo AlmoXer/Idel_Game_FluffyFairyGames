@@ -25,7 +25,7 @@ public class Helicopter : MonoBehaviour {
     public void UnloadCharge()
     {
         City city = FindObjectOfType<City>();
-       // moneyCalculator.AddMoney(city.stack, charge);
+        moneyCalculator.AddMoney(city.stack, charge);
         charge = new Money();
     }
 }

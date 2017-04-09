@@ -8,18 +8,14 @@ public class FarmBluePrint
     {
     [Header("Generell")]
     public GameObject prefab;
-    public int cost;
-
-    [Header("Forschung")]
-    public int KostenGeld;
-    public int vorausgesetztesLevel;
+    public Money cost;
 
     [Header("UI")]
     public Sprite Icon;
 
-    public int GetSellAmount()
+   /* public int GetSellAmount()
     {
         return cost / 2;
-    }
+    }*/
 
 }
