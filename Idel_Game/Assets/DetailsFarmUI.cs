@@ -12,30 +12,43 @@ public class DetailsFarmUI : MonoBehaviour {
     public Text incomeOnline;
     public Text countFelder;
     public Text costUpgrade;
+    public GameObject upgradeButton;
 
     private MoneyCalculator moneyCalculator;
-
+    private Farm farm;
     void Awake()
     {
-        moneyCalculator = FindObjectOfType<MoneyCalculator>();
+        moneyCalculator = this.GetComponent<MoneyCalculator>();
     }
 
 
-    public void UpdateData(Farm _farm)
+    public void UpdateData()
     {
-        if(_farm.ID != -1)
+        if (farm.ID != -1)
         {
-            iconFarm.sprite = FarmArchiv.instance.allFarmes[_farm.ID].Icon;
-            levelFram.text = _farm.level.ToString();
+
+            iconFarm.sprite = FarmArchiv.instance.allFarmes[farm.ID].Icon;
+            levelFram.text = farm.level.ToString();
 
             //Income Offline Anzeigen  
-            incomeOffline.text = moneyCalculator.GetMoneyString(_farm.incomeOffline);
+            incomeOffline.text = moneyCalculator.GetMoneyString(farm.incomeOffline);
 
             //Income Online Anzeigen
-            incomeOnline.text = moneyCalculator.GetMoneyString(_farm.incomeOnline);
+            incomeOnline.text = moneyCalculator.GetMoneyString(farm.incomeOnline);
 
-            countFelder.text = _farm.countFields.ToString();
+            countFelder.text = farm.countFields.ToString();
+
+            costUpgrade.text = moneyCalculator.GetMoneyString(farm.GetUpgradeCosts());
+
+            upgradeButton.GetComponent<UpgradeFarmButton>().SetFarm(farm);
         }
-
     }
+
+    public void SetUpdateData(Farm _farm)
+    {
+        farm = _farm;
+        UpdateData();
+        
+    }
+
 }

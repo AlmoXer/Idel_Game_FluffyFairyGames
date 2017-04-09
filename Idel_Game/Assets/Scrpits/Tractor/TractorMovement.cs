@@ -11,7 +11,7 @@ public class TractorMovement : MonoBehaviour
     [SerializeField]
     private RectTransform target = new RectTransform();
 
-    GameObject[] waypoints = new GameObject[14];
+    GameObject[] waypoints = new GameObject[15];
 
     [SerializeField]
     private int countActiveWayPoints;
@@ -54,13 +54,12 @@ public class TractorMovement : MonoBehaviour
             if (farmID == tractor.farm.POS)
             {
                 waypoints[iCount] = allfields[i];
-                iCount++;
-                countActiveWayPoints = iCount;              
+                iCount++;          
             }
         }
+        countActiveWayPoints = iCount+1;
 
-
-        if(target != null)
+        if (target != null)
         {
             if(!load)
             {
@@ -70,14 +69,16 @@ public class TractorMovement : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, target.position) <= 0.5f)
                 {
+             
                     if (driveHome)
                     {
                         wavepointIndex = -1;
                         tractor.UnloadCharge();
                         loadCountDown = 100;
                     }
-                        
-                    GetNextWaypoint();
+
+                    loadCountDown = loadRate;
+                    load = true;
 
                 }
             }
@@ -88,10 +89,13 @@ public class TractorMovement : MonoBehaviour
         if (loadCountDown <= 0f && load)
         {
             load = false;
-            if(wavepointIndex!=0 && wavepointIndex!=countActiveWayPoints-1)
-                tractor.LoadCharge(waypoints[wavepointIndex-1]);
-            else
+
+            if(!driveHome)
                 tractor.LoadCharge(waypoints[wavepointIndex]);
+
+            GetNextWaypoint();
+
+
         }
 
         if(load)
@@ -104,11 +108,7 @@ public class TractorMovement : MonoBehaviour
 
     void GetNextWaypoint()
     {
-       loadCountDown = loadRate;
-      //  if(wavepointIndex!=-1)
-        load = true;
-
-        if (wavepointIndex >= countActiveWayPoints -1)
+        if (wavepointIndex >= countActiveWayPoints -2)
         {
             EndPath();
             return;

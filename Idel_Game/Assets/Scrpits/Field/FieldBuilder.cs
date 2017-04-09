@@ -10,6 +10,7 @@ public class FieldBuilder : MonoBehaviour {
     private int countfields;
     private float buttonWidth;
     private float buttonHeight;
+    private int level;
     public Field prefab;
 
 
@@ -20,6 +21,20 @@ public class FieldBuilder : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(level!=farm.level)
+        {
+            level = farm.level;
+
+            GameObject[] allfields = GameObject.FindGameObjectsWithTag("Field");
+            for (int i = 0; i < allfields.Length; i++)
+            {
+                int farmID = allfields[i].GetComponent<Field>().farmID;
+                if (farmID == farm.POS)
+                {
+                    allfields[i].GetComponent<Field>().level = farm.level;                
+                }
+            }
+        }
 
         if(farm.countFields != countfields)
         {

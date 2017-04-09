@@ -12,14 +12,21 @@ public class Farm : MonoBehaviour {
     public int countFields = 0;
     public Money incomeOnline ;
     public Money incomeOffline ;
+    private Money upgradeCost = new Money();
     public Money stack = new Money();
 
     public IncomeFarmCalculator incomeCalculator;
     public FieldCalculator fieldCalculator;
     public GameObject tractor;
 
-	// Update is called once per frame
-	void Update () {
+    public MoneyCalculator moneyCalculator;
+
+    private void Start()
+    {
+        moneyCalculator = this.GetComponent<MoneyCalculator>();
+    }
+    // Update is called once per frame
+    void Update () {
 
         if (ID == -1)
         {
@@ -42,6 +49,13 @@ public class Farm : MonoBehaviour {
         {           
             countFields = fieldCalculator.GetFields(level);
         }
+    }
 
+    public Money GetUpgradeCosts()
+    {
+        Money m = new Money();
+        int faktor = level / 50;
+        m.money[faktor] = 200 * level;      
+        return m;
     }
 }

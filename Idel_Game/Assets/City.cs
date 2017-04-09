@@ -25,10 +25,9 @@ public class City : MonoBehaviour {
             return;
 
         //Das (int[])Geld vom Spieler wird in eine Moneyklasse übertragen 
-        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
-        {
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)       
             moneyPlayer.money[i] = PlayerProfile.player.money[i];
-        }
+        
         //Wenn der Stack kleiner ist als unsere Sales (Abnehmermenge) --> Verkaufe ganze Stack
         if (!moneyCalculator.EnoughMoney(stack, sales))
         {
