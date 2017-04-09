@@ -22,6 +22,17 @@ public class DetailsFarmUI : MonoBehaviour {
     }
 
 
+    private void Update()
+    {
+        if (farm == null)
+            return;
+
+        if (moneyCalculator.EnoughMoney(PlayerProfile.playerProfile.GetMoney(), farm.GetUpgradeCosts()))
+            upgradeButton.GetComponent<Button>().interactable = true;
+        else
+            upgradeButton.GetComponent<Button>().interactable = false;
+    }
+
     public void UpdateData()
     {
         if (farm.ID != -1)

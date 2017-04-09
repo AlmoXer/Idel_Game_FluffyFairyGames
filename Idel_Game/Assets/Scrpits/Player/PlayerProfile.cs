@@ -127,4 +127,12 @@ public class PlayerProfile : MonoBehaviour
     {
         saveFile();
     }
+
+    public Money GetMoney()
+    {
+        Money moneyPlayer = new Money();
+        for (int i = 0; i < player.money.Length; i++)
+            moneyPlayer.money[i] = player.money[i];
+        return moneyPlayer;
+    }
 }

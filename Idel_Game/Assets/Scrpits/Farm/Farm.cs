@@ -55,7 +55,9 @@ public class Farm : MonoBehaviour {
     {
         Money m = new Money();
         int faktor = level / 50;
-        m.money[faktor] = 200 * level;      
+        m.money[faktor] = 200 * level;
+        Money mZero = new Money();
+        moneyCalculator.AddMoney(m, mZero);   
         return m;
     }
 }

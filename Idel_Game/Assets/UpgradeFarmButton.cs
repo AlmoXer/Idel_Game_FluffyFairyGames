@@ -10,10 +10,14 @@ public class UpgradeFarmButton : MonoBehaviour {
     public void UpgradeFarm()
     {
         //Das (int[])Geld vom Spieler wird in eine Moneyklasse übertragen 
-        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
-            moneyPlayer.money[i] = PlayerProfile.player.money[i];
+        moneyPlayer = PlayerProfile.playerProfile.GetMoney();
         farm.moneyCalculator.SubMoney(moneyPlayer, farm.GetUpgradeCosts());
         farm.level++;
+
+        //Money an den Spieler übertragen
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
+            PlayerProfile.player.money[i] = moneyPlayer.money[i];
+        
     }
 
     public void SetFarm(Farm _farm) { farm = _farm; }
