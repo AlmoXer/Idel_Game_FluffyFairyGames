@@ -75,6 +75,7 @@ public class TractorMovement : MonoBehaviour
                     {
                         wavepointIndex = -1;
                         tractor.UnloadCharge();
+                        loadCountDown = 100;
                     }
                         
                     GetNextWaypoint();
@@ -88,7 +89,15 @@ public class TractorMovement : MonoBehaviour
         if (loadCountDown <= 0f && load)
         {
             load = false;
-            tractor.LoadCharge(waypoints[wavepointIndex]);
+            if(wavepointIndex!=0 && wavepointIndex!=countActiveWayPoints-1)
+                tractor.LoadCharge(waypoints[wavepointIndex-1]);
+            else
+                tractor.LoadCharge(waypoints[wavepointIndex]);
+
+            if (wavepointIndex >= countActiveWayPoints - 1)
+                return;
+            else
+                wavepointIndex++;
         }
 
         loadCountDown -= Time.deltaTime;
@@ -100,18 +109,21 @@ public class TractorMovement : MonoBehaviour
 
     void GetNextWaypoint()
     {
-
+       loadCountDown = loadRate;
+        if(wavepointIndex!=-1)
         load = true;
           if (wavepointIndex >= countActiveWayPoints -1)
           {
               EndPath();
               return;
           }
-          wavepointIndex++;
-          target = waypoints[wavepointIndex].GetComponent<RectTransform>();
+        if(wavepointIndex==-1)
+            target = waypoints[0].GetComponent<RectTransform>();
+        else
+            target = waypoints[wavepointIndex].GetComponent<RectTransform>();
         driveHome = false;
 
-        loadCountDown = loadRate;
+ 
     }
 
     void EndPath()
