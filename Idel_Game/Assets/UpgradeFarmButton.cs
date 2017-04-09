@@ -14,6 +14,8 @@ public class UpgradeFarmButton : MonoBehaviour {
         farm.moneyCalculator.SubMoney(moneyPlayer, farm.GetUpgradeCosts());
         farm.level++;
 
+        PlayerProfile.player.farmLevels[farm.POS] = farm.level;
+
         //Money an den Spieler übertragen
         for (int i = 0; i < PlayerProfile.player.money.Length; i++)
             PlayerProfile.player.money[i] = moneyPlayer.money[i];
