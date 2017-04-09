@@ -44,6 +44,9 @@ public class Field : MonoBehaviour {
 
     void UpdateIncome()
     {
+        income = new Money();
         income.money[0] = (ID+5) * 3 * level * 10;
+        Money moneyZero = new Money();
+        moneyCalculator.AddMoney(income,moneyZero);
     }
 }

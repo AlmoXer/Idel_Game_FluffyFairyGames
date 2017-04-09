@@ -129,7 +129,7 @@ public class MoneyCalculator : MonoBehaviour {
             {
                 string text;
                 if (i > 0)
-                    text = _money.money[i].ToString() + "." + (PlayerProfile.player.incomeOffline[i - 1] / 10).ToString() + " " + (char)(i + 97);
+                    text = _money.money[i].ToString() + "." + (_money.money[i - 1] / 10).ToString() + " " + (char)(i + 97);
                 else
                     text = _money.money[i].ToString() + " " + (char)(i + 97);
 
