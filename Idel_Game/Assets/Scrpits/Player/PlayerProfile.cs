@@ -7,6 +7,7 @@ public class PlayerProfile : MonoBehaviour
 {
     public ScreenFader fader;
 
+    [SerializeField]
     public static Player player;
     public static PlayerProfile playerProfile;
     public PlayerContainer playerContainer;

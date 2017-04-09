@@ -7,6 +7,7 @@ public class MoneyCalculator : MonoBehaviour {
 
     private Money money = new Money();
     private Money earnOffline = new Money();
+    private Money moneyPlayer = new Money();
 
     public Money GetMoneyOffline (Money _money, int DeltaTime)
     {
@@ -35,7 +36,25 @@ public class MoneyCalculator : MonoBehaviour {
         {
             PlayerProfile.player.money[i] += earnOffline.money[i];
         }
-        
+
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
+                moneyPlayer.money[i] = PlayerProfile.player.money[i];
+
+        for (int i = 0; i < moneyPlayer.money.Length; i++)
+        {
+            do
+            {
+                if (moneyPlayer.money[i] > 1000)
+                {
+                    moneyPlayer.money[i] -= 1000;
+                    moneyPlayer.money[i + 1]++;
+                }
+            }
+            while (moneyPlayer.money[i] > 1000);
+        }
+
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
+            PlayerProfile.player.money[i] = moneyPlayer.money[i] ;
     }
 
     public void AddMoney(Money _money, Money _add)

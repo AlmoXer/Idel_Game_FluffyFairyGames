@@ -10,68 +10,32 @@ public class PlayerStats : MonoBehaviour {
     public Text money;
     public Text rank;
 
+    private Money moneyPlayer = new Money();
+
+    MoneyCalculator moneyCalculator;
 	// Use this for initialization
 	void Start () {
-		
+        moneyCalculator = this.GetComponent<MoneyCalculator>();
 	}
 
     // Update is called once per frame
     void Update () {
 
         //Income Offline Anzeigen
-        for (int i = PlayerProfile.player.incomeOffline.Length - 1; i >= 0; i--)
-        {
-            if (PlayerProfile.player.incomeOffline[i] > 0)
-            {
-                string text;
-                if (i > 0)
-                    text = PlayerProfile.player.incomeOffline[i].ToString() + "." + (PlayerProfile.player.incomeOffline[i - 1] / 10).ToString() + " " + (char)(i + 97);
-                else
-                    text = PlayerProfile.player.incomeOffline[i].ToString() + " " + (char)(i + 97);
+        for (int i = 0; i < PlayerProfile.player.incomeOffline.Length; i++)        
+            moneyPlayer.money[i] = PlayerProfile.player.incomeOffline[i];
+        incomeOffline.text = moneyCalculator.GetMoneyString(moneyPlayer);
 
-                incomeOffline.text = text;
-                break;
-            }
-        }
-
-        //Income Online Anzeigen
-        for (int i = PlayerProfile.player.incomeOnline.Length - 1; i >= 0; i--)
-        {
-            if (PlayerProfile.player.incomeOnline[i] > 0)
-            {
-                string text;
-                if (i > 0)
-                    text = PlayerProfile.player.incomeOnline[i].ToString() + "." + (PlayerProfile.player.incomeOnline[i - 1] / 10).ToString() + " " + (char)(i + 97) + "/s";
-                else
-                    text = PlayerProfile.player.incomeOnline[i].ToString() + " " + (char)(i + 97) + "/s";
-
-
-                incomeOnline.text = text;
-                break;
-            }
-        }
-
+        //Income Offline Anzeigen
+        for (int i = 0; i < PlayerProfile.player.incomeOnline.Length; i++)
+            moneyPlayer.money[i] = PlayerProfile.player.incomeOnline[i];
+        incomeOnline.text = moneyCalculator.GetMoneyString(moneyPlayer);
 
         //Geld Anzeigen
-        for (int i = PlayerProfile.player.money.Length - 1; i >= 0; i--)
-        {
-            if (PlayerProfile.player.money[i] > 0)
-            {
-                string text;
-                if (i > 0)
-                    text = PlayerProfile.player.money[i].ToString() + "." + (PlayerProfile.player.money[i - 1] / 10).ToString() + " " + (char)(i + 97);
-                else
-                    text = PlayerProfile.player.money[i].ToString() + " " + (char)(i + 97);
-
-
-                money.text = text;
-                break;
-            }
-
-            if (i <= 0)
-                money.text = "Pleite";
-        }
-
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
+            moneyPlayer.money[i] = PlayerProfile.player.money[i];
+        money.text = moneyCalculator.GetMoneyString(moneyPlayer);
+        
         //Titel Anzeigen
         rank.text = PlayerProfile.player.rank;
     }
