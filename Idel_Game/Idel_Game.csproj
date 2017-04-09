@@ -79,6 +79,10 @@
     <Compile Include="Assets\CityUI.cs" />
     <Compile Include="Assets\DetailsFarmUI.cs" />
     <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Helicopter.cs" />
+    <Compile Include="Assets\HelicopterMovement.cs" />
+    <Compile Include="Assets\HelicopterUI.cs" />
+    <Compile Include="Assets\Helipad.cs" />
     <Compile Include="Assets\ScreenFader.cs" />
     <Compile Include="Assets\Scrpits\Archive\FarmArchiv.cs" />
     <Compile Include="Assets\Scrpits\Archive\FarmBluePrint.cs" />
