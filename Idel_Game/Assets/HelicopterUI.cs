@@ -7,7 +7,20 @@ public class HelicopterUI : MonoBehaviour {
 
     public Animator animator;
     public Helicopter helicopoter;
+    private bool load = false;
+    void Update()
+    {
+        if(helicopoter.load && !load)
+        {
+            animator.StopPlayback();
+            load = true;
+        }
 
-    //Animatoion für Laden und Entladen einfügen!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        if(!helicopoter.load && load)
+        {
+            animator.StartPlayback();
+            load = false;
+        }
+    }
 
 }

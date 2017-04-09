@@ -8,7 +8,7 @@ public class Helicopter : MonoBehaviour {
     public float speed = 5.0F;
     public Money charge = new Money();
     private MoneyCalculator moneyCalculator;
-
+    public bool load = false;
 
     private void Start()
     {

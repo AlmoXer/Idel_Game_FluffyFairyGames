@@ -65,7 +65,7 @@ public class MoneyCalculator : MonoBehaviour {
             _money.money[i] += _add.money[i];
             do
             {
-                if (_money.money[i] > 1000)
+                if (_money.money[i] >= 1000)
                 {
                     _money.money[i] -= 1000;
                     _money.money[i + 1]++;

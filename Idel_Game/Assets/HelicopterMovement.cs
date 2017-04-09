@@ -22,8 +22,8 @@ public class HelicopterMovement : MonoBehaviour
 
     private GameObject[] allHelipads;
 
-    private float loadRate = 1.5f;
-    private float loadCountDown = 1.5f;
+    private float loadRate = 1.18f;
+    private float loadCountDown = 1.18f;
 
     void Start()
     {
@@ -92,6 +92,7 @@ public class HelicopterMovement : MonoBehaviour
 
                     loadCountDown = loadRate;
                     load = true;
+                    helicopter.load = true;
 
                 }
             }
@@ -102,7 +103,7 @@ public class HelicopterMovement : MonoBehaviour
         if (loadCountDown <= 0f && load)
         {
             load = false;
-
+            helicopter.load = false;
             if (!driveHome)
                 helicopter.LoadCharge(waypoints[wavepointIndex]);
 
