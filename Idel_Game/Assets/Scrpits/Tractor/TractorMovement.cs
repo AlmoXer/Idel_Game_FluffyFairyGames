@@ -7,7 +7,6 @@ public class TractorMovement : MonoBehaviour
 {
     public GameObject fields;
     private int wavepointIndex = 0;
-    // public Waypoints wayPoints;
     private Tractor tractor;
     [SerializeField]
     private RectTransform target = new RectTransform();
@@ -93,13 +92,9 @@ public class TractorMovement : MonoBehaviour
                 tractor.LoadCharge(waypoints[wavepointIndex-1]);
             else
                 tractor.LoadCharge(waypoints[wavepointIndex]);
-
-            if (wavepointIndex >= countActiveWayPoints - 1)
-                return;
-            else
-                wavepointIndex++;
         }
 
+        if(load)
         loadCountDown -= Time.deltaTime;
 
 
@@ -110,17 +105,17 @@ public class TractorMovement : MonoBehaviour
     void GetNextWaypoint()
     {
        loadCountDown = loadRate;
-        if(wavepointIndex!=-1)
+      //  if(wavepointIndex!=-1)
         load = true;
-          if (wavepointIndex >= countActiveWayPoints -1)
-          {
-              EndPath();
-              return;
-          }
-        if(wavepointIndex==-1)
-            target = waypoints[0].GetComponent<RectTransform>();
-        else
-            target = waypoints[wavepointIndex].GetComponent<RectTransform>();
+
+        if (wavepointIndex >= countActiveWayPoints -1)
+        {
+            EndPath();
+            return;
+        }
+
+        wavepointIndex++;
+        target = waypoints[wavepointIndex].GetComponent<RectTransform>();
         driveHome = false;
 
  

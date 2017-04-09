@@ -14,8 +14,8 @@ public class PlayerProfile : MonoBehaviour
     private bool firstTick = true;
 
     public static Money[] farmIncomes = new Money[6];
-
     public static Money incomeOffline = new Money();
+
     private Money money = new Money();
     // Use this for initialization
     void Awake()
@@ -61,7 +61,7 @@ public class PlayerProfile : MonoBehaviour
                 player.incomeOnline[i] = 0;
 
             for (int i = 0; i < player.money.Length; i++)
-                if (i != 4)
+                if (i != 0)
                     player.money[i] = 0;
                 else
                     player.money[i] = 100;           
