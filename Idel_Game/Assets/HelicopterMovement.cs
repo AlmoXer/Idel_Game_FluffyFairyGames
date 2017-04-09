@@ -86,7 +86,7 @@ public class HelicopterMovement : MonoBehaviour
                     if (driveHome)
                     {
                         wavepointIndex = -1;
-                       // helicopter.UnloadCharge();
+                        helicopter.UnloadCharge();
                         loadCountDown = 100;
                     }
 

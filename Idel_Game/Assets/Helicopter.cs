@@ -15,15 +15,17 @@ public class Helicopter : MonoBehaviour {
         moneyCalculator = this.GetComponent<MoneyCalculator>();
     }
 
-    public void LoadCharge(GameObject _fieldObject)
+    public void LoadCharge(GameObject _helipadObject)
     {
-       // moneyCalculator.AddMoney(charge, _fieldObject.GetComponent<Field>().stack);
-      //  _fieldObject.GetComponent<Field>().stack = new Money();
+        Helipad pad = _helipadObject.GetComponent<Helipad>();
+        moneyCalculator.AddMoney(charge, pad.farm.stack);
+        _helipadObject.GetComponent<Helipad>().farm.stack = new Money();
     }
 
     public void UnloadCharge()
     {
-     //   moneyCalculator.AddMoney(farm.stack, charge);
+        City city = FindObjectOfType<City>();
+       // moneyCalculator.AddMoney(city.stack, charge);
         charge = new Money();
     }
 }
