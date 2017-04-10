@@ -16,8 +16,11 @@ public class City : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        LoadStack();    
         moneyCalculator = this.GetComponent<MoneyCalculator>();
         InvokeRepeating("Sale", 0f, 5.0f);
+        InvokeRepeating("SaveStack", 0f, 2.0f);
     }
     
     void Sale()
@@ -57,5 +60,20 @@ public class City : MonoBehaviour {
         moneyCalculator.AddMoney(m, mZero);
         return m;
     }
+
+    void SaveStack()
+    {
+        for (int j = 0; j < PlayerProfile.player.cityStack.Length; j++)
+            PlayerProfile.player.cityStack[j] = stack.money[j];
+
+    }
+
+    void LoadStack()
+    {
+        for (int j = 0; j < PlayerProfile.player.cityStack.Length; j++)
+            stack.money[j] = PlayerProfile.player.cityStack[j];
+
+    }
+
 
 }
