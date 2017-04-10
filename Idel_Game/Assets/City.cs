@@ -81,5 +81,15 @@ public class City : MonoBehaviour {
 
     }
 
+    public Money GetDifference()
+    {
+        Money m = new Money();   
+        Money diff = new Money();
+        diff.money[0] = sales.money[0] * (level+1) + ((level+1) * 100 / 455);
+        m.money[0] = sales.money[0] * level + (level * 100 / 455);
+
+        moneyCalculator.SubMoney(diff,m );
+        return diff ;
+    }
 
 }

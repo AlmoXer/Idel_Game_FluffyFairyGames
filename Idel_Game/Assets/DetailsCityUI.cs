@@ -13,6 +13,9 @@ public class DetailsCityUI : MonoBehaviour {
     public Text levelCity;
     public Text sales;
     public Text helicopterSpeed;
+    public Text salesDifference;
+    public Text helicopterSpeedDifference;
+
     public Text costUpgrade;
 
     // Use this for initialization
@@ -39,9 +42,10 @@ public class DetailsCityUI : MonoBehaviour {
 
         // Sales(Abnehmermenge) alle 5 Sekungen
         sales.text = moneyCalculator.GetMoneyString(city.sales);
-       
+        salesDifference.text = moneyCalculator.GetMoneyString(city.GetDifference());
+
         helicopterSpeed.text = GameObject.FindObjectOfType<Helicopter>().speed.ToString();
-       
+        helicopterSpeedDifference.text = GameObject.FindObjectOfType<Helicopter>().GetDifferenceSpeed().ToString();
         costUpgrade.text = moneyCalculator.GetMoneyString(city.GetUpgradeCosts());
                   
     }
