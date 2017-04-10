@@ -62,10 +62,10 @@ public class PlayerProfile : MonoBehaviour
                 player.incomeOnline[i] = 0;
 
             for (int i = 0; i < player.money.Length; i++)
-                if (i != 0)
+                if (i != 2)
                     player.money[i] = 0;
                 else
-                    player.money[i] = 100;
+                    player.money[i] = 175;
 
             for (int i = 0; i < player.farmStack.Length; i++)
                 for (int j = 0; j < player.money.Length; j++)

@@ -16,7 +16,7 @@ public class FarmBuilderIteamCreater : MonoBehaviour
     {
         RectTransform myRect = GetComponent<RectTransform>();
         buttonHeight = 70;
-        buttonWidth = 70;
+        buttonWidth = 125;
         GridLayoutGroup grid = this.GetComponent<GridLayoutGroup>();
         grid.cellSize = new Vector2(buttonWidth, buttonHeight);
 
