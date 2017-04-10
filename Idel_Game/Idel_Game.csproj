@@ -75,24 +75,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\City.cs" />
-    <Compile Include="Assets\CityUI.cs" />
-    <Compile Include="Assets\DetailsCityUI.cs" />
-    <Compile Include="Assets\DetailsFarmUI.cs" />
-    <Compile Include="Assets\GameManager.cs" />
-    <Compile Include="Assets\Helicopter.cs" />
-    <Compile Include="Assets\HelicopterMovement.cs" />
-    <Compile Include="Assets\HelicopterUI.cs" />
-    <Compile Include="Assets\Helipad.cs" />
-    <Compile Include="Assets\ScreenFader.cs" />
     <Compile Include="Assets\Scrpits\Archive\FarmArchiv.cs" />
     <Compile Include="Assets\Scrpits\Archive\FarmBluePrint.cs" />
     <Compile Include="Assets\Scrpits\Archive\FieldArchiv.cs" />
     <Compile Include="Assets\Scrpits\Archive\FieldBluePrint.cs" />
     <Compile Include="Assets\Scrpits\Archive\TractorArchiv.cs" />
     <Compile Include="Assets\Scrpits\Archive\TractorBluePrint.cs" />
+    <Compile Include="Assets\Scrpits\Calculator\FieldCalculator.cs" />
     <Compile Include="Assets\Scrpits\Calculator\IncomeFarmCalculator.cs" />
     <Compile Include="Assets\Scrpits\Calculator\MoneyCalculator.cs" />
+    <Compile Include="Assets\Scrpits\City\City.cs" />
+    <Compile Include="Assets\Scrpits\City\CityUI.cs" />
+    <Compile Include="Assets\Scrpits\City\DetailsCityUI.cs" />
+    <Compile Include="Assets\Scrpits\Farm\DetailsFarmUI.cs" />
     <Compile Include="Assets\Scrpits\Farm\Farm.cs" />
     <Compile Include="Assets\Scrpits\Farm\FarmBuilder.cs" />
     <Compile Include="Assets\Scrpits\Farm\FarmBuilderIteamCreater.cs" />
@@ -101,8 +96,16 @@
     <Compile Include="Assets\Scrpits\Field\Field.cs" />
     <Compile Include="Assets\Scrpits\Field\FieldBuilder.cs" />
     <Compile Include="Assets\Scrpits\Field\FieldUI.cs" />
-    <Compile Include="Assets\Scrpits\FieldCalculator.cs" />
-    <Compile Include="Assets\Scrpits\Money.cs" />
+    <Compile Include="Assets\Scrpits\GUI\ScreenFader.cs" />
+    <Compile Include="Assets\Scrpits\GUI\StartIncomeUI.cs" />
+    <Compile Include="Assets\Scrpits\GUI\UpgradeCityButton.cs" />
+    <Compile Include="Assets\Scrpits\GUI\UpgradeFarmButton.cs" />
+    <Compile Include="Assets\Scrpits\GameManager.cs" />
+    <Compile Include="Assets\Scrpits\Helicopter\Helicopter.cs" />
+    <Compile Include="Assets\Scrpits\Helicopter\HelicopterMovement.cs" />
+    <Compile Include="Assets\Scrpits\Helicopter\HelicopterUI.cs" />
+    <Compile Include="Assets\Scrpits\Helicopter\Helipad.cs" />
+    <Compile Include="Assets\Scrpits\Player\Money.cs" />
     <Compile Include="Assets\Scrpits\Player\Player.cs" />
     <Compile Include="Assets\Scrpits\Player\PlayerContainer.cs" />
     <Compile Include="Assets\Scrpits\Player\PlayerProfile.cs" />
@@ -111,9 +114,6 @@
     <Compile Include="Assets\Scrpits\Tractor\Tractor.cs" />
     <Compile Include="Assets\Scrpits\Tractor\TractorMovement.cs" />
     <Compile Include="Assets\Scrpits\Tractor\TractorUI.cs" />
-    <Compile Include="Assets\StartIncomeUI.cs" />
-    <Compile Include="Assets\UpgradeCityButton.cs" />
-    <Compile Include="Assets\UpgradeFarmButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Saves\players.xml" />

@@ -33,7 +33,7 @@ public class FarmBuilder : MonoBehaviour {
         farms[lastButtonID].level = 1;
 
         Money m = PlayerProfile.playerProfile.GetMoney();
-        farms[farms[lastButtonID].ID].moneyCalculator.SubMoney(m, FarmArchiv.instance.farms[lastButtonID].cost);
+        farms[farms[lastButtonID].ID].moneyCalculator.SubMoney(m, FarmArchiv.instance.farms[farms[lastButtonID].ID].cost);
 
         //Money an den Spieler übertragen
         for (int i = 0; i < PlayerProfile.player.money.Length; i++)

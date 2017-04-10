@@ -33,10 +33,9 @@ public class PlayerProfile : MonoBehaviour
             playerProfile = this;
         }
 
-        for (int i = 0; i < farmIncomes.Length; i++)
-        {
+        for (int i = 0; i < farmIncomes.Length; i++)       
             farmIncomes[i] = new Money();
-        }
+        
 
         playerContainer = new PlayerContainer();
         if (null != playerContainer.Load(Path.Combine(Application.dataPath, "Saves/players.xml")))
@@ -71,6 +70,7 @@ public class PlayerProfile : MonoBehaviour
                 for (int j = 0; j < player.money.Length; j++)
                     player.farmStack[j] = new int[27];
 
+            player.cityLevel = 1;
 
             saveFile();
         }

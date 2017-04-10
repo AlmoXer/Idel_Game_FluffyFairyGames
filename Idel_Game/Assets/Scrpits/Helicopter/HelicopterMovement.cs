@@ -74,6 +74,7 @@ public class HelicopterMovement : MonoBehaviour
                 if (waypoints[i] == null && i != (countActiveWayPoints - 1))
                     i--;
                 bool empty = true;
+                if(i!=-1)
                 for (int j = i; j < waypoints.Length - 1; j++)               
                     if (waypoints[j] != null)
                         empty =false;

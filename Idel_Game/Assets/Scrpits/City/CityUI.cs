@@ -14,7 +14,7 @@ public class CityUI : MonoBehaviour {
     public Image icon;
 
     public City city;
-    private int level = 0;
+    private int level = 1;
 
     public int[] levelUpBroder;
 

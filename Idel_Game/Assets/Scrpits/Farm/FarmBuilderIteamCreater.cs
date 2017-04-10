@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class FarmBuilderIteamCreater : MonoBehaviour
 {
-
-
     private float buttonWidth;
     private float buttonHeight;
     public Image prefab;
@@ -19,7 +17,6 @@ public class FarmBuilderIteamCreater : MonoBehaviour
         buttonWidth = 125;
         GridLayoutGroup grid = this.GetComponent<GridLayoutGroup>();
         grid.cellSize = new Vector2(buttonWidth, buttonHeight);
-
 
         for (int i = 0; i < FarmArchiv.instance.allFarmes.Count; i++)
         {

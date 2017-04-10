@@ -20,8 +20,10 @@ public class DetailsCityUI : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        
         moneyCalculator = this.GetComponent<MoneyCalculator>();
-	}
+        //UpdateData();
+    }
 
     private void Update()
     {
