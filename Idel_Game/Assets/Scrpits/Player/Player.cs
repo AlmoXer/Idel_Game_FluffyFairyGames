@@ -20,6 +20,7 @@ public class Player
     public int[] incomeOffline = new int[27];
     public int[] incomeOnline = new int[27];
 
+    public int cityLevel;
 
     public int[] farmIDs = new int[6];
     public int[] farmLevels = new int[6];

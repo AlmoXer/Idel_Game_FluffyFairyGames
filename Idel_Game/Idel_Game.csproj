@@ -112,6 +112,7 @@
     <Compile Include="Assets\Scrpits\Tractor\TractorMovement.cs" />
     <Compile Include="Assets\Scrpits\Tractor\TractorUI.cs" />
     <Compile Include="Assets\StartIncomeUI.cs" />
+    <Compile Include="Assets\UpgradeCityButton.cs" />
     <Compile Include="Assets\UpgradeFarmButton.cs" />
   </ItemGroup>
   <ItemGroup>

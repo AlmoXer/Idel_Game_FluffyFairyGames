@@ -5,12 +5,12 @@ using UnityEngine;
 public class City : MonoBehaviour {
 
     public int level = 1;
-    public Money sales;
+    public Money sales = new Money();
     public Money stack = new Money();
     private Money moneyPlayer = new Money();
     private Money money = new Money();
 
-    private MoneyCalculator moneyCalculator;
+    public MoneyCalculator moneyCalculator;
 
 	// Use this for initialization
 	void Start () {

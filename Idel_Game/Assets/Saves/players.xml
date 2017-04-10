@@ -4,7 +4,7 @@
     <Player name="ME">
       <rank>Landwirt</rank>
       <money>
-        <int>100</int>
+        <int>952</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -32,9 +32,9 @@
         <int>0</int>
         <int>0</int>
       </money>
-      <offlineTime>-8587098217117510396</offlineTime>
+      <offlineTime>-8587098211213147986</offlineTime>
       <incomeOffline>
-        <int>0</int>
+        <int>2</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -63,7 +63,7 @@
         <int>0</int>
       </incomeOffline>
       <incomeOnline>
-        <int>0</int>
+        <int>20</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -91,8 +91,9 @@
         <int>0</int>
         <int>0</int>
       </incomeOnline>
+      <cityLevel>0</cityLevel>
       <farmIDs>
-        <int>-1</int>
+        <int>0</int>
         <int>-1</int>
         <int>-1</int>
         <int>-1</int>
@@ -100,7 +101,7 @@
         <int>-1</int>
       </farmIDs>
       <farmLevels>
-        <int>0</int>
+        <int>1</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
