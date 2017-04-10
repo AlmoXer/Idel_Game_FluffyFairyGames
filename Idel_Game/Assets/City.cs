@@ -21,6 +21,11 @@ public class City : MonoBehaviour {
         moneyCalculator = this.GetComponent<MoneyCalculator>();
         InvokeRepeating("Sale", 0f, 5.0f);
         InvokeRepeating("SaveStack", 0f, 2.0f);
+
+        sales.money[0] = sales.money[0]*level + (level * 100 / 455);
+        Money mZero = new Money();
+        moneyCalculator.AddMoney(sales, mZero);
+
         GameObject.FindObjectOfType<Helicopter>().UpdateSpeed();
     }
     
