@@ -8,7 +8,9 @@ public class ScreenFader : MonoBehaviour {
     public GameObject farmBuilder;
     public GameObject incomeOffline;
     public GameObject cityDetails;
-
+    public GameObject[] farms;
+    public GameObject city;
+ 
     [SerializeField]
     private GameObject lastScreen;
 
@@ -24,29 +26,53 @@ public class ScreenFader : MonoBehaviour {
     {
         incomeOffline.SetActive(true);
         lastScreen = incomeOffline;
+        deactivateMatchfield();
     }
 
     public void OpenFarmDetails()
     {
         farmDetails.SetActive(true);
         lastScreen = farmDetails;
+        deactivateMatchfield();
     }
 
     public void OpenFarmBuilder()
     {
         farmBuilder.SetActive(true);
         lastScreen = farmBuilder;
+        deactivateMatchfield();
     }
 
     public void OpenCityDetails()
     {
         cityDetails.SetActive(true);
         lastScreen = cityDetails;
+        deactivateMatchfield();
     }
 
     public void CloseLastScreen()
     {
         lastScreen.SetActive(false);
         lastScreen = null;
+        activateMatchfield();
+    }
+
+    void deactivateMatchfield()
+    {
+        city.GetComponent<Button>().interactable = false;
+        for (int i = 0; i < farms.Length; i++)
+        {
+            farms[i].GetComponent<Button>().interactable = false;
+        }
+    }
+
+
+    void activateMatchfield()
+    {
+        city.GetComponent<Button>().interactable = true;
+        for (int i = 0; i < farms.Length; i++)
+        {
+            farms[i].GetComponent<Button>().interactable = true;
+        }
     }
 }
