@@ -7,19 +7,10 @@ public class ScreenFader : MonoBehaviour {
     public GameObject farmDetails;
     public GameObject farmBuilder;
     public GameObject incomeOffline;
+    public GameObject cityDetails;
 
     [SerializeField]
     private GameObject lastScreen;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void FarmClicked(Image _image)
     {
@@ -45,6 +36,12 @@ public class ScreenFader : MonoBehaviour {
     {
         farmBuilder.SetActive(true);
         lastScreen = farmBuilder;
+    }
+
+    public void OpenCityDetails()
+    {
+        cityDetails.SetActive(true);
+        lastScreen = cityDetails;
     }
 
     public void CloseLastScreen()

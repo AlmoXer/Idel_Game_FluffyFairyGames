@@ -42,11 +42,18 @@ public class City : MonoBehaviour {
         }
 
         //Money an den Spieler übertragen
-        for (int i = 0; i < PlayerProfile.player.money.Length; i++)
-        {
-            PlayerProfile.player.money[i] = moneyPlayer.money[i]; 
-        }
-
-
+        for (int i = 0; i < PlayerProfile.player.money.Length; i++)       
+            PlayerProfile.player.money[i] = moneyPlayer.money[i];         
     }
+
+    public Money GetUpgradeCosts()
+    {
+        Money m = new Money();
+        int faktor = level / 50;
+        m.money[faktor] = 200 * level + (455*level/37);
+        Money mZero = new Money();
+        moneyCalculator.AddMoney(m, mZero);
+        return m;
+    }
+
 }
