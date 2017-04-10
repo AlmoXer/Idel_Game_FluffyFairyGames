@@ -8,9 +8,15 @@ public class DetailsFarmUI : MonoBehaviour {
     public Text title;
     public Image iconFarm;
     public Text levelFram;
+
     public Text incomeOffline;
     public Text incomeOnline;
     public Text countFelder;
+
+    public Text incomeOfflineDifference;
+    public Text incomeOnlineDifference;
+    public Text countFelderDifference;
+
     public Text costUpgrade;
     public GameObject upgradeButton;
 
@@ -50,9 +56,23 @@ public class DetailsFarmUI : MonoBehaviour {
 
             countFelder.text = farm.countFields.ToString();
 
+            Money diffOff = new Money();
+            Money diffOn = new Money();
+            int diffFields = 0;
+            farm.MoneyGetUpgradeDifferenz(diffOff, diffOn, diffFields);
+            //Income OfflineDifference Anzeigen  
+            incomeOfflineDifference.text = moneyCalculator.GetMoneyString(diffOff);
+
+            //Income OnlineDifference Anzeigen
+            incomeOnlineDifference.text = moneyCalculator.GetMoneyString(diffOn);
+
+            countFelderDifference.text = diffFields.ToString();
+
             costUpgrade.text = moneyCalculator.GetMoneyString(farm.GetUpgradeCosts());
 
             upgradeButton.GetComponent<UpgradeFarmButton>().SetFarm(farm);
+
+
         }
     }
 

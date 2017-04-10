@@ -84,4 +84,17 @@ public class Farm : MonoBehaviour {
         }
     }
 
+    public void MoneyGetUpgradeDifferenz(Money _diffOff, Money _diffOn, int _count)
+    {
+        _count += fieldCalculator.GetFields(level);
+
+        Money diffOn = incomeCalculator.GetIncome(ID, level+1, countFields);
+        Money diffOff = incomeCalculator.GetIncomeOffline(ID, level+1, countFields);
+
+        _count -= 2*fieldCalculator.GetFields(level);
+
+        moneyCalculator.SubMoney(diffOff, _diffOff);
+        moneyCalculator.SubMoney(diffOn, _diffOn);
+    }
+
 }
