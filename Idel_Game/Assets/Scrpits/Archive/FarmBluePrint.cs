@@ -9,6 +9,7 @@ public class FarmBluePrint
     [Header("Generell")]
     public GameObject prefab;
     public Money cost;
+    public string name = "Farm";
 
     [Header("UI")]
     public Sprite Icon;

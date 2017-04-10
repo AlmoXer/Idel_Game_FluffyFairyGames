@@ -9,6 +9,7 @@ public class Helicopter : MonoBehaviour {
     public Money charge = new Money();
     private MoneyCalculator moneyCalculator;
     public bool load = false;
+    public bool idel = false;
 
     private void Start()
     {

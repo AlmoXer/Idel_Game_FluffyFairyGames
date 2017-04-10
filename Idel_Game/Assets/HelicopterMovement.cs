@@ -28,14 +28,24 @@ public class HelicopterMovement : MonoBehaviour
     void Start()
     {
         helicopter = this.GetComponent<Helicopter>();
-
-       allHelipads = GameObject.FindGameObjectsWithTag("Helipad");
-        target = helicopter.home.GetComponent<RectTransform>();
     }
 
     void Update()
     {
+
         allHelipads = GameObject.FindGameObjectsWithTag("Helipad");
+
+        if (allHelipads.Length == 0)
+        {
+           helicopter.idel = true;
+            return;
+        }
+        else
+           helicopter.idel = false;
+
+        if (target == null)
+            target = helicopter.home.GetComponent<RectTransform>();
+
         countActiveWayPoints = 0;
         int iCount = 0;
         for (int i = 0; i < allHelipads.Length; i++)
@@ -97,6 +107,7 @@ public class HelicopterMovement : MonoBehaviour
                 }
             }
         }
+
 
 
 

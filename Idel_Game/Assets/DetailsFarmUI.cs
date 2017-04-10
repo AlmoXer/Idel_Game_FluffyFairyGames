@@ -37,6 +37,7 @@ public class DetailsFarmUI : MonoBehaviour {
     {
         if (farm.ID != -1)
         {
+            title.text = FarmArchiv.instance.allFarmes[farm.ID].name;
 
             iconFarm.sprite = FarmArchiv.instance.allFarmes[farm.ID].Icon;
             levelFram.text = farm.level.ToString();

@@ -5,20 +5,23 @@ using UnityEngine.UI;
 
 public class HelicopterUI : MonoBehaviour {
 
-    public Animator animator;
+    public Animation animatonWork;
     public Helicopter helicopoter;
     private bool load = false;
+
     void Update()
     {
-        if(helicopoter.load && !load)
+        if (helicopoter.idel)
         {
-            animator.StopPlayback();
-            load = true;
+            return;
         }
 
         if(!helicopoter.load && load)
         {
-            animator.StartPlayback();
+            foreach (AnimationState state in animatonWork)
+            {
+                state.speed = 1.0f;
+            }
             load = false;
         }
     }

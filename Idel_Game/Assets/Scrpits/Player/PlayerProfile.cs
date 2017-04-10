@@ -65,8 +65,12 @@ public class PlayerProfile : MonoBehaviour
                 if (i != 0)
                     player.money[i] = 0;
                 else
-                    player.money[i] = 100;           
+                    player.money[i] = 100;
 
+            for (int i = 0; i < player.farmStack.Length; i++)
+                for (int j = 0; j < player.money.Length; j++)
+                    player.farmStack[j] = new int[27];
+                         
             saveFile();
         }
         else

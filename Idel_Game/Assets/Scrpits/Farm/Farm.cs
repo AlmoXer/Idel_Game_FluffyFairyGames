@@ -24,7 +24,9 @@ public class Farm : MonoBehaviour {
 
     private void Start()
     {
+        LoadStack();
         moneyCalculator = this.GetComponent<MoneyCalculator>();
+        InvokeRepeating("SaveStack", 0f, 2.0f);
     }
     // Update is called once per frame
     void Update () {
@@ -42,6 +44,7 @@ public class Farm : MonoBehaviour {
     public void IncomeCalculator()
     {
         incomeOnline = incomeCalculator.GetIncome(ID, level, countFields);
+        incomeOffline = incomeCalculator.GetIncomeOffline(ID, level, countFields);
         PlayerProfile.farmIncomes[POS] = incomeOnline;
     }
 
@@ -57,9 +60,25 @@ public class Farm : MonoBehaviour {
     {
         Money m = new Money();
         int faktor = level / 50;
-        m.money[faktor] = 200 * level;
+        m.money[faktor] = (200 * level)+(level*455/37);
         Money mZero = new Money();
         moneyCalculator.AddMoney(m, mZero);   
         return m;
+    }
+
+    void SaveStack()
+    {
+        for (int j = 0; j < PlayerProfile.player.farmStack[POS].Length; j++)
+        {
+            PlayerProfile.player.farmStack[POS][j] = stack.money[j];
+        }
+    }
+
+    void LoadStack()
+    {
+        for (int j = 0; j < PlayerProfile.player.farmStack[POS].Length; j++)
+        {
+             stack.money[j] = PlayerProfile.player.farmStack[POS][j];
+        }
     }
 }
