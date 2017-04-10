@@ -86,7 +86,17 @@ public class MoneyCalculator : MonoBehaviour {
                 _money.money[i+1]--;
                 _money.money[i] += 1000;
             }
-
+            bool empty = true;
+            for (int j = i; j < _money.money.Length; j++)
+            {
+                if (_money.money[j] != null)
+                {
+                    empty = false;
+                    break;
+                }
+            }
+            if (empty)
+                return;
         }
     }
 
