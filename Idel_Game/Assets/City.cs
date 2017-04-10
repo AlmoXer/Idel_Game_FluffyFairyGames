@@ -5,6 +5,7 @@ using UnityEngine;
 public class City : MonoBehaviour {
 
     public int level = 1;
+    public int levelMax = 400;
     public Money sales = new Money();
     public Money stack = new Money();
     private Money moneyPlayer = new Money();

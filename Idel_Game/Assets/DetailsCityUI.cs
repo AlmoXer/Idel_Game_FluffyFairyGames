@@ -16,7 +16,7 @@ public class DetailsCityUI : MonoBehaviour {
     public Text costUpgrade;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         moneyCalculator = this.GetComponent<MoneyCalculator>();
 	}
 
@@ -25,7 +25,7 @@ public class DetailsCityUI : MonoBehaviour {
         if (city == null)
             return;
 
-        if (moneyCalculator.EnoughMoney(PlayerProfile.playerProfile.GetMoney(), city.GetUpgradeCosts()))
+        if (moneyCalculator.EnoughMoney(PlayerProfile.playerProfile.GetMoney(), city.GetUpgradeCosts()) && city.level != city.levelMax)
             upgradeButton.GetComponent<Button>().interactable = true;
         else
             upgradeButton.GetComponent<Button>().interactable = false;

@@ -13,7 +13,7 @@ public class UpgradeCityButton : MonoBehaviour
         city = GameObject.FindObjectOfType<City>();
     }
 
-    public void UpgradeFarm()
+    public void UpgradeCity()
     {
         //Das (int[])Geld vom Spieler wird in eine Moneyklasse übertragen 
         moneyPlayer = PlayerProfile.playerProfile.GetMoney();
@@ -22,6 +22,11 @@ public class UpgradeCityButton : MonoBehaviour
 
         PlayerProfile.player.cityLevel = city.level;
 
+        city.sales.money[0] = city.sales.money[0] * city.level;
+        Money mZero = new Money();
+        city.moneyCalculator.AddMoney(city.sales, mZero);
+
+        GameObject.FindObjectOfType<Helicopter>().speed = 5.0f + (95.0f * (float)city.level / (float)city.levelMax);
         //Money an den Spieler übertragen
         for (int i = 0; i < PlayerProfile.player.money.Length; i++)
             PlayerProfile.player.money[i] = moneyPlayer.money[i];
