@@ -11,6 +11,11 @@ public class Tractor : MonoBehaviour {
 
     public MoneyCalculator moneyCalculator;
 
+    private void Update()
+    {
+        speed = 3f + 77f* (float)farm.level / (float)farm.levelMax;
+    }
+
     public void LoadCharge(GameObject _fieldObject)
     {
         moneyCalculator.AddMoney(charge, _fieldObject.GetComponent<Field>().stack);

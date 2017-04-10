@@ -9,6 +9,7 @@ public class Farm : MonoBehaviour {
     public int POS;
     public int ID = -1;
     public int level = 0;
+    public int levelMax = 800;
     public int countFields = 0;
     public Money incomeOnline ;
     public Money incomeOffline ;
@@ -84,17 +85,26 @@ public class Farm : MonoBehaviour {
         }
     }
 
-    public void MoneyGetUpgradeDifferenz(Money _diffOff, Money _diffOn, int _count)
-    {
-        _count += fieldCalculator.GetFields(level);
-
-        Money diffOn = incomeCalculator.GetIncome(ID, level+1, countFields);
-        Money diffOff = incomeCalculator.GetIncomeOffline(ID, level+1, countFields);
-
-        _count -= 2*fieldCalculator.GetFields(level);
-
-        moneyCalculator.SubMoney(diffOff, _diffOff);
-        moneyCalculator.SubMoney(diffOn, _diffOn);
+    public Money GetDifferenceOffline() {
+        Money diffOff = incomeCalculator.GetIncomeOffline(ID, level + 1 , countFields);
+        Money moneyOff = incomeCalculator.GetIncomeOffline(ID, level , countFields);
+        moneyCalculator.SubMoney(diffOff, moneyOff);
+        return diffOff;
     }
+
+    public Money GetDifferenceOnline()
+    {
+        Money diffOn = incomeCalculator.GetIncome(ID, level + 1, countFields);
+        Money moneyOn= incomeCalculator.GetIncome(ID, level, countFields);
+        moneyCalculator.SubMoney(diffOn, moneyOn);
+        return diffOn;
+    }
+
+    public int GetDifferenceFields()
+    {
+        return fieldCalculator.GetFields(level + 1) - fieldCalculator.GetFields(level);
+    }
+
+
 
 }

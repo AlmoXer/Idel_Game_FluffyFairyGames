@@ -37,6 +37,9 @@ public class DetailsFarmUI : MonoBehaviour {
             upgradeButton.GetComponent<Button>().interactable = true;
         else
             upgradeButton.GetComponent<Button>().interactable = false;
+
+        if (farm.level.ToString() != levelFram.text)
+            UpdateData();
     }
 
     public void UpdateData()
@@ -56,17 +59,14 @@ public class DetailsFarmUI : MonoBehaviour {
 
             countFelder.text = farm.countFields.ToString();
 
-            Money diffOff = new Money();
-            Money diffOn = new Money();
-            int diffFields = 0;
-            farm.MoneyGetUpgradeDifferenz(diffOff, diffOn, diffFields);
+
             //Income OfflineDifference Anzeigen  
-            incomeOfflineDifference.text = moneyCalculator.GetMoneyString(diffOff);
+            incomeOfflineDifference.text = moneyCalculator.GetMoneyString(farm.GetDifferenceOffline());
 
             //Income OnlineDifference Anzeigen
-            incomeOnlineDifference.text = moneyCalculator.GetMoneyString(diffOn);
+            incomeOnlineDifference.text = moneyCalculator.GetMoneyString(farm.GetDifferenceOnline());
 
-            countFelderDifference.text = diffFields.ToString();
+            countFelderDifference.text = farm.GetDifferenceFields().ToString();
 
             costUpgrade.text = moneyCalculator.GetMoneyString(farm.GetUpgradeCosts());
 
