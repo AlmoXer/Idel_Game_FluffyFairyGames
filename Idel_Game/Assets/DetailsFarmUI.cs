@@ -11,11 +11,13 @@ public class DetailsFarmUI : MonoBehaviour {
 
     public Text incomeOffline;
     public Text incomeOnline;
+    public Text tractorSpeed;
     public Text countFelder;
 
     public Text incomeOfflineDifference;
     public Text incomeOnlineDifference;
     public Text countFelderDifference;
+    public Text tractorSpeedDifference;
 
     public Text costUpgrade;
     public GameObject upgradeButton;
@@ -52,20 +54,23 @@ public class DetailsFarmUI : MonoBehaviour {
             levelFram.text = farm.level.ToString();
 
             //Income Offline Anzeigen  
-            incomeOffline.text = moneyCalculator.GetMoneyString(farm.incomeOffline);
+            incomeOffline.text = moneyCalculator.GetMoneyString(farm.incomeOffline) + "/s";
 
             //Income Online Anzeigen
-            incomeOnline.text = moneyCalculator.GetMoneyString(farm.incomeOnline);
+            incomeOnline.text = moneyCalculator.GetMoneyString(farm.incomeOnline) + "/s";
 
+
+            tractorSpeed.text = farm.tractor.GetComponent<Tractor>().speed.ToString();
             countFelder.text = farm.countFields.ToString();
 
 
             //Income OfflineDifference Anzeigen  
-            incomeOfflineDifference.text = moneyCalculator.GetMoneyString(farm.GetDifferenceOffline());
+            incomeOfflineDifference.text = moneyCalculator.GetMoneyString(farm.GetDifferenceOffline()) + "/s";
 
             //Income OnlineDifference Anzeigen
-            incomeOnlineDifference.text = moneyCalculator.GetMoneyString(farm.GetDifferenceOnline());
+            incomeOnlineDifference.text = moneyCalculator.GetMoneyString(farm.GetDifferenceOnline()) + "/s";
 
+            tractorSpeedDifference.text = farm.tractor.GetComponent<Tractor>().GetSpeedDifference().ToString();
             countFelderDifference.text = farm.GetDifferenceFields().ToString();
 
             costUpgrade.text = moneyCalculator.GetMoneyString(farm.GetUpgradeCosts());

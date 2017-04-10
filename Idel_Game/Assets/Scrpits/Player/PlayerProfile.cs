@@ -140,4 +140,9 @@ public class PlayerProfile : MonoBehaviour
             moneyPlayer.money[i] = player.money[i];
         return moneyPlayer;
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

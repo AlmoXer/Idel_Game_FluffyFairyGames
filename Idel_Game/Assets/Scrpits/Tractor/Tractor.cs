@@ -27,4 +27,10 @@ public class Tractor : MonoBehaviour {
         moneyCalculator.AddMoney(farm.stack, charge);
         charge = new Money();
     }
+
+    public float GetSpeedDifference()
+    {
+        return (3f + 77f * (float)(farm.level + 1) / (float)farm.levelMax) - (3f + 77f * (float)farm.level / (float)farm.levelMax);
+    }
+     
 }

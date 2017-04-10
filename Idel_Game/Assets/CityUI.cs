@@ -22,6 +22,7 @@ public class CityUI : MonoBehaviour {
 
     void Start()
     {
+        icon.sprite = spritesCity[0];
         moneyCalculator = this.GetComponent<MoneyCalculator>();
     }
 
