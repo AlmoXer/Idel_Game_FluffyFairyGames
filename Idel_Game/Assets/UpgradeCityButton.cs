@@ -22,7 +22,7 @@ public class UpgradeCityButton : MonoBehaviour
 
         PlayerProfile.player.cityLevel = city.level;
 
-        city.sales.money[0] = city.sales.money[0] * city.level;
+        city.sales.money[0] = city.sales.money[0] + (city.level*100/455);
         Money mZero = new Money();
         city.moneyCalculator.AddMoney(city.sales, mZero);
 

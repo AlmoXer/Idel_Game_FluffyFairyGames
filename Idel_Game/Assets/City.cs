@@ -16,11 +16,12 @@ public class City : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        level = PlayerProfile.player.cityLevel;
         LoadStack();    
         moneyCalculator = this.GetComponent<MoneyCalculator>();
         InvokeRepeating("Sale", 0f, 5.0f);
         InvokeRepeating("SaveStack", 0f, 2.0f);
+        GameObject.FindObjectOfType<Helicopter>().UpdateSpeed();
     }
     
     void Sale()
@@ -33,7 +34,7 @@ public class City : MonoBehaviour {
         for (int i = 0; i < PlayerProfile.player.money.Length; i++)       
             moneyPlayer.money[i] = PlayerProfile.player.money[i];
         
-        //Wenn der Stack kleiner ist als unsere Sales (Abnehmermenge) --> Verkaufe ganze Stack
+        //Wenn der Stack kleiner ist als unsere Sales (Abnehmermenge) --> Verkaufe ganzen Stack
         if (!moneyCalculator.EnoughMoney(stack, sales))
         {
             moneyCalculator.AddMoney(moneyPlayer, stack);

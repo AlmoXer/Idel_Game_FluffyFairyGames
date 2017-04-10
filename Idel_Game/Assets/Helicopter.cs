@@ -29,4 +29,9 @@ public class Helicopter : MonoBehaviour {
         moneyCalculator.AddMoney(city.stack, charge);
         charge = new Money();
     }
+
+    public void UpdateSpeed()
+    {
+        speed = 5.0f + (95.0f * (float)home.GetComponent<City>().level / (float)home.GetComponent<City>().levelMax);
+    }
 }

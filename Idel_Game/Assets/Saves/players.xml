@@ -4,8 +4,8 @@
     <Player name="ME">
       <rank>Landwirt</rank>
       <money>
-        <int>309</int>
-        <int>0</int>
+        <int>22</int>
+        <int>15</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -32,9 +32,9 @@
         <int>0</int>
         <int>0</int>
       </money>
-      <offlineTime>-8587098153268878618</offlineTime>
+      <offlineTime>-8587098139763628397</offlineTime>
       <incomeOffline>
-        <int>5</int>
+        <int>10</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -63,7 +63,7 @@
         <int>0</int>
       </incomeOffline>
       <incomeOnline>
-        <int>50</int>
+        <int>100</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
@@ -91,7 +91,7 @@
         <int>0</int>
         <int>0</int>
       </incomeOnline>
-      <cityLevel>3</cityLevel>
+      <cityLevel>9</cityLevel>
       <cityStack>
         <int>0</int>
         <int>0</int>
@@ -123,37 +123,8 @@
       </cityStack>
       <farmStack>
         <ArrayOfInt>
-          <int>450</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-          <int>0</int>
-        </ArrayOfInt>
-        <ArrayOfInt>
-          <int>0</int>
-          <int>0</int>
+          <int>350</int>
+          <int>7</int>
           <int>0</int>
           <int>0</int>
           <int>0</int>
@@ -241,6 +212,35 @@
         <ArrayOfInt>
           <int>0</int>
           <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+          <int>0</int>
+        </ArrayOfInt>
+        <ArrayOfInt>
+          <int>50</int>
+          <int>1</int>
           <int>0</int>
           <int>0</int>
           <int>0</int>
@@ -306,7 +306,7 @@
         <int>-1</int>
       </farmIDs>
       <farmLevels>
-        <int>2</int>
+        <int>7</int>
         <int>0</int>
         <int>0</int>
         <int>0</int>
