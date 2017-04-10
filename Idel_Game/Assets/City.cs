@@ -11,6 +11,7 @@ public class City : MonoBehaviour {
     private Money moneyPlayer = new Money();
     private Money money = new Money();
 
+    [HideInInspector]
     public MoneyCalculator moneyCalculator;
 
 	// Use this for initialization

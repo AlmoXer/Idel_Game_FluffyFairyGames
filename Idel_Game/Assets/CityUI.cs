@@ -32,6 +32,7 @@ public class CityUI : MonoBehaviour {
         if (city.level!=level)
         {
             level = city.level;
+            levelText.text = level.ToString();
 
             for (int i = 0; i < spritesCity.Length; i++)
             {
